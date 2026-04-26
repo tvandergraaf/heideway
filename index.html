@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heideway — Binnenkort beschikbaar</title>
+    <meta name="description" content="Heideway — Premium vakantieverhuur in de Drentse natuur. Waar design, comfort en natuur samenkomen. Verwacht voorjaar 2027.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://heideway.nl">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Heideway — Binnenkort beschikbaar">
+    <meta property="og:description" content="Premium vakantieverhuur in de Drentse natuur. Waar design, comfort en natuur samenkomen.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heideway.nl">
+    <meta property="og:locale" content="nl_NL">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green-dark: #263828;
+            --green-mid: #344a34;
+            --green-forest: #4a6a3a;
+            --purple-deep: #4e2d78;
+            --purple-mid: #6a4a90;
+            --purple-light: #7a5a9e;
+            --purple-hover: #5c3885;
+            --warm-bg: #f4f2ee;
+            --warm-gray: #a09a90;
+            --text-dark: #1e1e1c;
+        }
+
+        html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: var(--warm-bg);
+            color: var(--text-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: linear-gradient(155deg, #263828 0%, #344a34 30%, #2e3e2c 65%, #223020 100%);
+            overflow: hidden;
+        }
+
+        .hero-glow {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 65% 35%, rgba(78,45,120,0.10) 0%, transparent 55%),
+                radial-gradient(ellipse at 25% 75%, rgba(74,100,58,0.12) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%; left: 60%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(78,45,120,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 15%; left: 20%;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(74,106,58,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -20px) scale(1.1); }
+        }
+
+        .hero-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        .logo .dot { color: var(--purple-deep); }
+        .logo-sub {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.25);
+            display: block;
+            margin-top: 2px;
+        }
+
+        .hero-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 100px;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+        .status-dot {
+            width: 7px; height: 7px;
+            background: var(--purple-deep);
+            border-radius: 50%;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(78,45,120,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(78,45,120,0); } }
+        .status-badge span {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            font-weight: 500;
+        }
+
+        .hero-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 700;
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        .hero-headline .pop {
+            color: var(--purple-light);
+            font-style: italic;
+        }
+
+        .hero-sub {
+            font-size: 16px;
+            color: rgba(255,255,255,0.35);
+            max-width: 480px;
+            line-height: 1.8;
+            margin-bottom: 48px;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-date {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.2);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        .hero-date strong {
+            color: var(--purple-light);
+            font-weight: 500;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: 0;
+            max-width: 420px;
+            width: 100%;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        .signup-input {
+            flex: 1;
+            padding: 14px 20px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .signup-input::placeholder { color: rgba(255,255,255,0.25); }
+        .signup-input:focus { border-color: rgba(78,45,120,0.4); background: rgba(255,255,255,0.08); }
+        .signup-btn {
+            padding: 14px 28px;
+            background: var(--purple-deep);
+            color: white;
+            border: 1px solid var(--purple-deep);
+            border-radius: 0 10px 10px 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .signup-btn:hover { background: var(--purple-hover); }
+        .signup-hint {
+            font-size: 11px;
+            color: rgba(255,255,255,0.18);
+            margin-top: 12px;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .accent-strip {
+            height: 4px;
+            background: linear-gradient(90deg, #2a3e22, #4a6a3a, #4e2d78, #4a6a3a, #2a3e22);
+        }
+
+        .content-section {
+            padding: 80px 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .section-bar { width: 24px; height: 2px; background: var(--purple-deep); }
+        .section-label span {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--purple-deep);
+        }
+
+        .content-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .content-title .pop { color: var(--purple-deep); }
+        .content-title .nature { color: var(--green-forest); }
+
+        .content-desc {
+            font-size: 15px;
+            color: var(--warm-gray);
+            max-width: 520px;
+            margin: 0 auto 48px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); }
+        .feature-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+        .feature-card:nth-child(1) .feature-bar { background: var(--green-forest); }
+        .feature-card:nth-child(2) .feature-bar { background: var(--purple-deep); }
+        .feature-card:nth-child(3) .feature-bar { background: var(--green-forest); }
+
+        .feature-icon {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 22px;
+        }
+        .feature-card:nth-child(1) .feature-icon { background: rgba(74,106,58,0.1); }
+        .feature-card:nth-child(2) .feature-icon { background: rgba(78,45,120,0.1); }
+        .feature-card:nth-child(3) .feature-icon { background: rgba(74,106,58,0.1); }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            font-size: 13px;
+            color: var(--warm-gray);
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #1e2a1a;
+            color: rgba(255,255,255,0.3);
+            font-size: 12px;
+        }
+        .footer a { color: var(--purple-mid); text-decoration: none; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .hero-nav { padding: 20px 24px; }
+            .hero-body { padding: 40px 24px; }
+            .features { grid-template-columns: 1fr; gap: 12px; }
+            .content-section { padding: 60px 24px; }
+            .signup-form { flex-direction: column; gap: 10px; }
+            .signup-input { border-right: 1px solid rgba(255,255,255,0.1); border-radius: 10px; }
+            .signup-btn { border-radius: 10px; }
+        }
+
+        @media (max-width: 480px) {
+            .logo { font-size: 20px; }
+            .content-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-glow"></div>
+
+        <nav class="hero-nav">
+            <div>
+                <div class="logo">Heideway<span class="dot">.</span></div>
+                <span class="logo-sub">Drenthe</span>
+            </div>
+        </nav>
+
+        <div class="hero-body">
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                <span>In ontwikkeling</span>
+            </div>
+
+            <h1 class="hero-headline">
+                Binnenkort<span class="pop">.</span>
+            </h1>
+
+            <p class="hero-sub">
+                Een plek waar de rust van de Drentse natuur samenvloeit met eigentijds design en ongegeneerd comfort. Heideway wordt uw verblijf op de heide.
+            </p>
+
+            <p class="hero-date">Verwacht &mdash; <strong>Voorjaar 2027</strong></p>
+
+            <div class="signup-form">
+                <input type="email" class="signup-input" placeholder="Uw e-mailadres">
+                <button class="signup-btn">Op de hoogte blijven</button>
+            </div>
+            <p class="signup-hint">Geen spam. Alleen updates over de opening.</p>
+        </div>
+    </section>
+
+    <div class="accent-strip"></div>
+
+    <section class="content-section">
+        <div class="reveal">
+            <div class="section-label">
+                <div class="section-bar"></div>
+                <span>Wat komt eraan</span>
+                <div class="section-bar"></div>
+            </div>
+
+            <h2 class="content-title">
+                Natuur. <span class="pop">Design.</span> <span class="nature">Comfort.</span>
+            </h2>
+
+            <p class="content-desc">
+                Heideway wordt een premium vakantiewoning in het hart van Drenthe. Gelegen tussen de heidevelden, ingericht met oog voor detail, en voorzien van alles wat een bijzonder verblijf vraagt.
+            </p>
+        </div>
+
+        <div class="features reveal">
+            <div class="feature-card">
+                <div class="feature-bar"></div>
+                <div class="feature-icon">&#9670;</div>
+                <h3>Design</h3>
+                <p>Eigentijds interieur met premium materialen en doordachte details in elk hoekje.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-bar"></div>
+                <div class="feature-icon">&#10047;</div>
+                <h3>Natuur</h3>
+                <p>Direct aan de Drentse heide. Wandel- en fietsroutes beginnen bij de voordeur.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-bar"></div>
+                <div class="feature-icon">&#9733;</div>
+                <h3>Comfort</h3>
+                <p>Hot tub, sauna en buitenkeuken. Alles voor een verblijf dat verder gaat dan slapen.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="accent-strip"></div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Heideway &mdash; Vitamatras B.V. &mdash; <a href="mailto:info@heideway.nl">info@heideway.nl</a></p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
