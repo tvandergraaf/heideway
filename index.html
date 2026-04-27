@@ -734,6 +734,17 @@
         @media (max-width: 480px) {
             .nav-brand { font-size: 19px; }
         }
+
+        .signup-feedback {
+            font-size: 11px;
+            margin-top: 10px;
+            min-height: 16px;
+            transition: opacity 0.3s;
+        }
+        .signup-feedback.success { color: #4a7a4a; }
+        .signup-feedback.error { color: #c0392b; }
+        .signup-feedback.duplicate { color: #8b7d6b; }
+        .signup-btn:disabled { opacity: 0.55; cursor: not-allowed; }
     </style>
 </head>
 <body>
@@ -757,6 +768,7 @@
                 <button class="signup-btn" id="signupBtn">Houd me op de hoogte</button>
             </div>
             <p class="signup-hint">Eenmalig bericht bij opening. Geen spam.</p>
+            <p class="signup-feedback" id="signupFeedback"></p>
         </div>
         <div class="scroll-line"></div>
     </section>
@@ -946,6 +958,8 @@
     (function() {
         'use strict';
 
+        var API_URL = 'https://script.google.com/macros/s/AKfycbzQrfNWN5kCOmQRyxFKGPBl2esjaqnY2mrNLh2Vwt6St5pUorsGVLkD9IsZjgszu2Z7/exec';
+
         // Nav scroll
         var nav = document.getElementById('nav');
         window.addEventListener('scroll', function() {
@@ -1013,7 +1027,12 @@
                 eggEmail.style.borderColor = '#e74c3c';
                 return;
             }
-            console.log('Heideway claim:', JSON.stringify({ email: email, egg: currentEgg, found: foundCount }));
+            fetch(API_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({ email: email, bron: 'easter-egg-' + currentEgg })
+            });
             eggContent.style.display = 'none';
             eggSuccess.classList.add('show');
             setTimeout(closeModal, 3500);
@@ -1060,13 +1079,45 @@
             showEgg('footer');
         });
 
-        // Egg 5: typ "heide" in signup
-        document.getElementById('signupBtn').addEventListener('click', function(e) {
-            var val = document.getElementById('signupInput').value.trim().toLowerCase();
-            if (val.includes('heide') && !EGGS.signup.found) {
-                e.preventDefault();
+        // Signup: easter egg check + email submit naar Apps Script
+        document.getElementById('signupBtn').addEventListener('click', function() {
+            var btn = this;
+            var input = document.getElementById('signupInput');
+            var feedback = document.getElementById('signupFeedback');
+            var val = input.value.trim();
+
+            if (val.toLowerCase().includes('heide') && !EGGS.signup.found) {
                 showEgg('signup');
+                return;
             }
+
+            if (!val || !val.includes('@') || !val.includes('.')) {
+                feedback.textContent = 'Vul een geldig e-mailadres in.';
+                feedback.className = 'signup-feedback error';
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Even geduld...';
+            feedback.textContent = '';
+            feedback.className = 'signup-feedback';
+
+            fetch(API_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({ email: val, bron: 'teaser-pagina' })
+            }).then(function() {
+                feedback.textContent = 'Je staat op de lijst. We melden ons bij de opening.';
+                feedback.className = 'signup-feedback success';
+                input.value = '';
+                btn.textContent = 'Geregistreerd';
+            }).catch(function() {
+                feedback.textContent = 'Er ging iets mis. Probeer het opnieuw.';
+                feedback.className = 'signup-feedback error';
+                btn.disabled = false;
+                btn.textContent = 'Houd me op de hoogte';
+            });
         });
     })();
     </script>
