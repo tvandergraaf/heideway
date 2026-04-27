@@ -1,1275 +1,1074 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heideway — Binnenkort beschikbaar</title>
-<meta name="description" content="Heideway — Premium vakantieverhuur in de Drentse natuur. Waar design, comfort en natuur samenkomen. Verwacht voorjaar 2027.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://heideway.nl">
-<meta property="og:title" content="Heideway — Binnenkort beschikbaar">
-<meta property="og:description" content="Premium vakantieverhuur in de Drentse natuur. Waar design, comfort en natuur samenkomen.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://heideway.nl">
-<meta property="og:locale" content="nl_NL">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-    /* Fris & Licht — Optie 3 */
-    --bg-warm-white: #faf9f6;
-    --bg-cream: #f5f3ee;
-    --bg-sand: #ede9e0;
-    --text-primary: #2c2a26;
-    --text-secondary: #5a5046;
-    --accent-taupe: #8b7d6b;
-    --accent-taupe-light: #c4b9a8;
-    --border-color: #e0d8cc;
-    --taupe-dim: rgba(139,125,107,0.10);
-
-    /* Event accents (bewaard) */
-    --gold: #B8860B;
-    --gold-light: #D4A520;
-    --accent-copper: #b87333;
-
-    /* Dark contrast voor event cards */
-    --dark-card: #2c2a26;
-    --dark-deep: #1e1c18;
-}
-
-html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-}
-
-body {
-    font-family: 'Space Grotesk', -apple-system, sans-serif;
-    background: var(--bg-warm-white);
-    color: var(--text-primary);
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* === HERO — licht, warm, premium === */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background: linear-gradient(155deg, #f5f3ee 0%, #faf9f6 30%, #ede9e0 65%, #f5f3ee 100%);
-    overflow: hidden;
-}
-
-.hero-glow {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 65% 35%, rgba(139,125,107,0.08) 0%, transparent 55%),
-        radial-gradient(ellipse at 25% 75%, rgba(196,185,168,0.10) 0%, transparent 50%);
-    pointer-events: none;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 60%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(139,125,107,0.06) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: float 8s ease-in-out infinite;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: 15%;
-    left: 20%;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(196,185,168,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: float 10s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(30px, -20px) scale(1.1); }
-}
-
-.hero-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 28px 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.5px;
-    cursor: default;
-    user-select: none;
-}
-
-.logo .dot {
-    color: var(--accent-taupe);
-    transition: all 0.3s;
-}
-
-.logo-sub {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 9px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--accent-taupe-light);
-    display: block;
-    margin-top: 2px;
-}
-
-.hero-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-}
-
-.status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 20px;
-    background: rgba(139,125,107,0.06);
-    border: 1px solid var(--border-color);
-    border-radius: 100px;
-    margin-bottom: 40px;
-    animation: fadeInDown 1s ease-out;
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    background: var(--accent-taupe);
-    border-radius: 50%;
-    animation: pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(139,125,107,0.4); }
-    50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(139,125,107,0); }
-}
-
-.status-badge span {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-.hero-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(48px, 8vw, 80px);
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.05;
-    margin-bottom: 12px;
-    animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-.hero-headline .pop {
-    color: var(--accent-taupe);
-    font-style: italic;
-}
-
-.hero-tagline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(18px, 3vw, 26px);
-    color: var(--text-secondary);
-    font-weight: 400;
-    font-style: italic;
-    margin-bottom: 48px;
-    animation: fadeInUp 1s ease-out 0.4s both;
-}
-
-.hero-date {
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent-taupe-light);
-    margin-bottom: 40px;
-    animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.hero-date strong {
-    color: var(--accent-taupe);
-    font-weight: 500;
-}
-
-.signup-form {
-    display: flex;
-    gap: 0;
-    max-width: 420px;
-    width: 100%;
-    animation: fadeInUp 1s ease-out 0.8s both;
-}
-
-.signup-input {
-    flex: 1;
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.7);
-    border: 1px solid var(--border-color);
-    border-right: none;
-    border-radius: 10px 0 0 10px;
-    color: var(--text-primary);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    outline: none;
-    transition: all 0.3s;
-}
-
-.signup-input::placeholder {
-    color: var(--accent-taupe-light);
-}
-
-.signup-input:focus {
-    border-color: var(--accent-taupe);
-    background: rgba(255,255,255,0.9);
-}
-
-.signup-btn {
-    padding: 14px 28px;
-    background: var(--text-primary);
-    color: var(--bg-warm-white);
-    border: 1px solid var(--text-primary);
-    border-radius: 0 10px 10px 0;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
-    white-space: nowrap;
-}
-
-.signup-btn:hover {
-    background: var(--text-secondary);
-    border-color: var(--text-secondary);
-}
-
-.signup-hint {
-    font-size: 11px;
-    color: var(--accent-taupe-light);
-    margin-top: 12px;
-    animation: fadeInUp 1s ease-out 1s both;
-}
-
-/* === ACCENT STRIP === */
-.accent-strip {
-    height: 3px;
-    background: linear-gradient(90deg, var(--bg-warm-white), var(--accent-taupe-light), var(--accent-taupe), var(--accent-taupe-light), var(--bg-warm-white));
-}
-
-/* === CONTENT SECTIONS === */
-.content-section {
-    padding: 80px 40px;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-.section-bar {
-    width: 24px;
-    height: 2px;
-    background: var(--accent-taupe);
-}
-
-.section-label span {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--accent-taupe);
-}
-
-.content-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    color: var(--text-primary);
-}
-
-.content-title .pop {
-    color: var(--accent-taupe);
-}
-
-.content-title .nature {
-    color: var(--text-secondary);
-}
-
-.content-desc {
-    font-size: 15px;
-    color: var(--text-secondary);
-    max-width: 520px;
-    margin: 0 auto 48px;
-    line-height: 1.8;
-    font-weight: 300;
-}
-
-/* === FEATURE CARDS === */
-.features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 20px;
-}
-
-.feature-card {
-    background: white;
-    border-radius: 16px;
-    padding: 32px 24px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s;
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(44,42,38,0.06);
-}
-
-.feature-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--accent-taupe);
-}
-
-.feature-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    font-size: 22px;
-    background: var(--taupe-dim);
-}
-
-.feature-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-}
-
-.feature-card p {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-/* === OMGEVING SECTION === */
-.omgeving-section {
-    padding: 80px 40px 60px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.omgeving-intro {
-    font-size: 15px;
-    color: var(--text-secondary);
-    max-width: 560px;
-    margin: 0 auto 48px;
-    line-height: 1.8;
-    font-weight: 300;
-}
-
-.omgeving-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-bottom: 40px;
-}
-
-.omgeving-card {
-    background: white;
-    border-radius: 16px;
-    padding: 28px 24px;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s;
-}
-
-.omgeving-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(44,42,38,0.06);
-}
-
-.omgeving-card-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--accent-taupe);
-}
-
-.omgeving-card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-}
-
-.omgeving-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-    background: var(--taupe-dim);
-}
-
-.omgeving-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.omgeving-card p {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 12px;
-}
-
-.omgeving-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.omgeving-tag {
-    display: inline-block;
-    padding: 4px 10px;
-    background: var(--bg-cream);
-    border-radius: 100px;
-    font-size: 11px;
-    color: var(--text-secondary);
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    border: 1px solid var(--border-color);
-}
-
-.omgeving-footer-text {
-    font-size: 13px;
-    color: var(--text-secondary);
-    font-style: italic;
-    font-weight: 300;
-}
-
-.omgeving-footer-text strong {
-    color: var(--accent-taupe);
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* === EVENTS SECTION — kaarten donker voor contrast === */
-.events-section {
-    padding: 80px 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-}
-
-.event-card {
-    background: linear-gradient(160deg, #2c2a26 0%, #3a3630 50%, #2c2a26 100%);
-    border-radius: 20px;
-    padding: 40px 32px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(196,185,168,0.15);
-    transition: all 0.4s;
-    text-align: left;
-    text-decoration: none;
-    color: #f5f3ee;
-    display: block;
-}
-
-.event-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(44,42,38,0.20);
-    border-color: rgba(196,185,168,0.3);
-}
-
-.event-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-}
-
-.event-card.gold::before {
-    background: linear-gradient(90deg, #c9a84c, #e2c97e, #c9a84c);
-}
-
-.event-card.copper::before {
-    background: linear-gradient(90deg, #b87333, #d4956a, #b87333);
-}
-
-.event-badge {
-    display: inline-block;
-    padding: 4px 14px;
-    border-radius: 100px;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.event-card.gold .event-badge {
-    background: rgba(201,168,76,0.15);
-    color: #c9a84c;
-    border: 1px solid rgba(201,168,76,0.25);
-}
-
-.event-card.copper .event-badge {
-    background: rgba(184,115,51,0.15);
-    color: #d4956a;
-    border: 1px solid rgba(184,115,51,0.25);
-}
-
-.event-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.2;
-    color: #f5f3ee;
-}
-
-.event-card .event-date {
-    font-size: 13px;
-    color: rgba(245,243,238,0.45);
-    margin-bottom: 16px;
-    font-weight: 300;
-}
-
-.event-card .event-desc {
-    font-size: 14px;
-    color: rgba(245,243,238,0.6);
-    line-height: 1.7;
-    margin-bottom: 24px;
-    font-weight: 300;
-}
-
-.event-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.event-card.gold .event-cta { color: #c9a84c; }
-.event-card.copper .event-cta { color: #d4956a; }
-
-.event-cta svg {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.3s;
-}
-
-.event-card:hover .event-cta svg {
-    transform: translateX(4px);
-}
-
-/* === FOOTER — licht thema === */
-.footer {
-    text-align: center;
-    padding: 40px;
-    background: var(--bg-sand);
-    color: var(--text-secondary);
-    font-size: 12px;
-    position: relative;
-    border-top: 1px solid var(--border-color);
-}
-
-.footer a {
-    color: var(--accent-taupe);
-    text-decoration: none;
-}
-
-/* === EASTER EGG STYLES === */
-.discovery-counter {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: rgba(44,42,38,0.95);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(184,134,11,0.3);
-    border-radius: 12px;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-    cursor: help;
-}
-
-.discovery-counter.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.discovery-counter .key-icon { font-size: 14px; }
-
-.discovery-counter .count {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px;
-    color: var(--gold-light);
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-
-.egg-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(0,0,0,0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    transition: background 0.5s;
-}
-
-.egg-overlay.active {
-    background: rgba(0,0,0,0.55);
-    pointer-events: auto;
-    backdrop-filter: blur(6px);
-}
-
-.egg-modal {
-    background: linear-gradient(160deg, #2c2a26 0%, #3a3630 50%, #44403a 100%);
-    border: 1px solid rgba(184,134,11,0.3);
-    border-radius: 20px;
-    padding: 48px 40px;
-    max-width: 440px;
-    width: 90%;
-    text-align: center;
-    transform: scale(0.8) translateY(30px);
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.egg-overlay.active .egg-modal {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-}
-
-.egg-modal::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, transparent, rgba(184,134,11,0.05), transparent, rgba(139,125,107,0.05), transparent);
-    animation: shimmer 8s linear infinite;
-}
-
-@keyframes shimmer { to { transform: rotate(360deg); } }
-
-.egg-modal > * { position: relative; z-index: 1; }
-
-.egg-sparkle {
-    font-size: 40px;
-    margin-bottom: 16px;
-    animation: sparkle-bounce 0.6s ease-out;
-}
-
-@keyframes sparkle-bounce {
-    0% { transform: scale(0) rotate(-30deg); }
-    60% { transform: scale(1.3) rotate(5deg); }
-    100% { transform: scale(1) rotate(0); }
-}
-
-.egg-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    color: var(--gold-light);
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-
-.egg-subtitle {
-    font-size: 13px;
-    color: rgba(245,243,238,0.5);
-    margin-bottom: 24px;
-    line-height: 1.6;
-}
-
-.egg-discount {
-    font-family: 'Playfair Display', serif;
-    font-size: 56px;
-    font-weight: 700;
-    color: #f5f3ee;
-    margin-bottom: 4px;
-    text-shadow: 0 0 40px rgba(184,134,11,0.3);
-}
-
-.egg-discount-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-}
-
-.egg-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-.egg-email-input {
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(184,134,11,0.2);
-    border-radius: 10px;
-    color: #f5f3ee;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    outline: none;
-    transition: all 0.3s;
-    text-align: center;
-}
-
-.egg-email-input::placeholder { color: rgba(245,243,238,0.25); }
-
-.egg-email-input:focus {
-    border-color: var(--gold);
-    background: rgba(255,255,255,0.08);
-}
-
-.egg-claim-btn {
-    padding: 14px 28px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: #2c2a26;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    letter-spacing: 0.5px;
-}
-
-.egg-claim-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(184,134,11,0.3);
-}
-
-.egg-limit {
-    font-size: 10px;
-    color: rgba(245,243,238,0.25);
-    letter-spacing: 1px;
-}
-
-.egg-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 32px;
-    height: 32px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 50%;
-    color: rgba(245,243,238,0.4);
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    z-index: 2;
-}
-
-.egg-close:hover {
-    background: rgba(255,255,255,0.1);
-    color: #f5f3ee;
-}
-
-.egg-success { display: none; text-align: center; }
-.egg-success.show { display: block; }
-
-.egg-success-icon { font-size: 48px; margin-bottom: 12px; }
-
-.egg-success-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--gold-light);
-    margin-bottom: 8px;
-}
-
-.egg-success-sub {
-    font-size: 13px;
-    color: rgba(245,243,238,0.5);
-    line-height: 1.6;
-}
-
-/* === HINT STYLES === */
-.hint-text {
-    font-size: 10px;
-    color: rgba(44,42,38,0.15);
-    letter-spacing: 1.5px;
-    font-style: italic;
-    transition: color 0.5s;
-    cursor: default;
-}
-
-.hint-text:hover {
-    color: rgba(44,42,38,0.35);
-}
-
-@keyframes dotHint {
-    0%, 92% { color: var(--accent-taupe); text-shadow: none; }
-    95% { color: var(--gold-light); text-shadow: 0 0 8px rgba(184,134,11,0.4); }
-    100% { color: var(--accent-taupe); text-shadow: none; }
-}
-
-.logo .dot {
-    animation: dotHint 8s ease-in-out infinite;
-    cursor: pointer;
-}
-
-.card-hint-number {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    font-family: 'Playfair Display', serif;
-    font-size: 11px;
-    color: rgba(44,42,38,0.06);
-    font-weight: 700;
-    transition: color 0.3s;
-}
-
-.feature-card:hover .card-hint-number {
-    color: rgba(44,42,38,0.15);
-}
-
-.hero-date strong {
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.hero-date strong:hover {
-    color: var(--gold-light);
-    text-shadow: 0 0 12px rgba(184,134,11,0.3);
-}
-
-.footer-secret {
-    font-size: 10px;
-    color: var(--accent-taupe-light);
-    letter-spacing: 1.5px;
-    margin-top: 12px;
-    font-style: italic;
-    cursor: pointer;
-    transition: all 0.4s;
-    user-select: none;
-}
-
-.footer-secret:hover {
-    color: var(--gold);
-    letter-spacing: 2px;
-}
-
-.hints-banner {
-    text-align: center;
-    padding: 24px 40px;
-    background: var(--bg-cream);
-    border-top: 1px solid var(--border-color);
-}
-
-.hints-banner p {
-    font-size: 12px;
-    color: var(--accent-taupe-light);
-    font-style: italic;
-    letter-spacing: 0.5px;
-}
-
-.hints-banner p span {
-    color: var(--gold);
-    font-weight: 500;
-}
-
-/* === ANIMATIONS === */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.egg-discovered {
-    animation: goldGlow 2s ease-in-out;
-}
-
-@keyframes goldGlow {
-    0% { filter: brightness(1); }
-    50% { filter: brightness(1.3) drop-shadow(0 0 10px rgba(184,134,11,0.5)); }
-    100% { filter: brightness(1); }
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-    .hero-nav { padding: 20px 24px; }
-    .hero-body { padding: 40px 24px; }
-    .features { grid-template-columns: 1fr; gap: 12px; }
-    .content-section { padding: 60px 24px; }
-    .signup-form { flex-direction: column; gap: 10px; }
-    .signup-input {
-        border-right: 1px solid var(--border-color);
-        border-radius: 10px;
-    }
-    .signup-btn { border-radius: 10px; }
-    .egg-modal { padding: 36px 28px; }
-    .egg-discount { font-size: 44px; }
-    .discovery-counter { bottom: 12px; right: 12px; }
-    .omgeving-grid { grid-template-columns: 1fr; }
-    .omgeving-section { padding: 60px 24px 48px; }
-    .events-grid { grid-template-columns: 1fr; }
-    .events-section { padding: 60px 24px; }
-}
-
-@media (max-width: 480px) {
-    .logo { font-size: 20px; }
-    .content-title { font-size: 28px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heideway — Binnenkort beschikbaar</title>
+    <meta name="description" content="Heideway — Vakantieverhuur in de Drentse natuur. Verdwaal op de heide. Verwacht voorjaar 2027.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://heideway.nl">
+    <meta property="og:title" content="Heideway — Binnenkort beschikbaar">
+    <meta property="og:description" content="Vakantieverhuur in de Drentse natuur. Verdwaal op de heide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heideway.nl">
+    <meta property="og:locale" content="nl_NL">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #faf9f6;
+            color: #2c2a26;
+            overflow-x: hidden;
+        }
+
+        /* === NAV === */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.4s, box-shadow 0.4s;
+        }
+        .nav.scrolled {
+            background: rgba(250,249,246,0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 #e0d8cc;
+        }
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: #2c2a26;
+            letter-spacing: -0.3px;
+            cursor: default;
+            user-select: none;
+        }
+        .nav-brand .dot {
+            color: #8b7d6b;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .nav-status {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #c4b9a8;
+            font-weight: 400;
+        }
+
+        /* === HERO === */
+        .hero {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 32px 72px;
+            position: relative;
+            background: #f5f3ee;
+        }
+
+        .hero-content {
+            max-width: 640px;
+            padding-top: 140px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(44px, 7vw, 72px);
+            font-weight: 400;
+            line-height: 1.08;
+            color: #2c2a26;
+            margin-bottom: 28px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: #8b7d6b;
+        }
+
+        .hero-text {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #5a5046;
+            max-width: 440px;
+            margin-bottom: 36px;
+            font-weight: 300;
+        }
+
+        .hero-date {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c4b9a8;
+            margin-bottom: 48px;
+        }
+
+        .signup-row {
+            display: flex;
+            gap: 0;
+            max-width: 400px;
+        }
+        .signup-input {
+            flex: 1;
+            padding: 14px 18px;
+            background: #faf9f6;
+            border: 1px solid #e0d8cc;
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #2c2a26;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .signup-input::placeholder { color: #c4b9a8; }
+        .signup-input:focus { border-color: #8b7d6b; }
+        .signup-btn {
+            padding: 14px 24px;
+            background: #2c2a26;
+            color: #faf9f6;
+            border: 1px solid #2c2a26;
+            border-radius: 0 8px 8px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        .signup-btn:hover { background: #5a5046; border-color: #5a5046; }
+        .signup-hint {
+            font-size: 11px;
+            color: #c4b9a8;
+            margin-top: 12px;
+        }
+
+        /* Scroll indicator */
+        .scroll-line {
+            position: absolute;
+            bottom: 24px;
+            right: 32px;
+            width: 1px;
+            height: 48px;
+            background: #e0d8cc;
+            overflow: hidden;
+        }
+        .scroll-line::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: #8b7d6b;
+            animation: scrollDown 2s ease-in-out infinite;
+        }
+        @keyframes scrollDown {
+            0% { top: -100%; }
+            100% { top: 100%; }
+        }
+
+        /* === DIVIDER === */
+        .divider {
+            height: 1px;
+            background: #e0d8cc;
+            margin: 0 32px;
+        }
+
+        /* === SECTION: WAT KOMT ERAAN === */
+        .section-coming {
+            padding: 96px 32px 80px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #8b7d6b;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .section-coming h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            max-width: 480px;
+        }
+
+        .section-coming .intro {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #5a5046;
+            max-width: 480px;
+            margin-bottom: 56px;
+            font-weight: 300;
+        }
+
+        /* Feature blocks — asymmetric, not cards */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1px;
+            background: #e0d8cc;
+            border: 1px solid #e0d8cc;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .feat {
+            background: #faf9f6;
+            padding: 36px 28px;
+        }
+        .feat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #e0d8cc;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        .feat h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #2c2a26;
+        }
+        .feat p {
+            font-size: 13px;
+            color: #8b7d6b;
+            line-height: 1.65;
+            font-weight: 300;
+        }
+
+        /* === SECTION: OMGEVING === */
+        .section-omgeving {
+            padding: 96px 32px 80px;
+            background: #f5f3ee;
+        }
+        .omgeving-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .omgeving-inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+        .omgeving-inner .intro {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #5a5046;
+            max-width: 480px;
+            margin-bottom: 56px;
+            font-weight: 300;
+        }
+
+        .omgeving-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .omgeving-item {
+            padding: 32px 28px;
+            background: #faf9f6;
+            border: 1px solid #e0d8cc;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .omgeving-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(44,42,38,0.05);
+        }
+        .omgeving-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .omgeving-item p {
+            font-size: 13px;
+            color: #5a5046;
+            line-height: 1.7;
+            margin-bottom: 14px;
+            font-weight: 300;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            padding: 4px 10px;
+            background: #f5f3ee;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #8b7d6b;
+        }
+        .omgeving-footnote {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #8b7d6b;
+            font-weight: 300;
+        }
+        .omgeving-footnote strong {
+            color: #5a5046;
+            font-weight: 500;
+        }
+
+        /* === SECTION: EVENEMENTEN (dark contrast) === */
+        .section-events {
+            padding: 96px 32px 80px;
+            background: #1c1c1e;
+        }
+        .events-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .events-inner .section-label {
+            color: #c9a84c;
+        }
+        .events-inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            color: #f5f3ee;
+        }
+        .events-inner .intro {
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(245,243,238,0.45);
+            max-width: 480px;
+            margin-bottom: 56px;
+            font-weight: 300;
+        }
+        .events-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .event-card {
+            padding: 32px 28px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+        }
+        .event-card:first-child::before { background: #c9a84c; }
+        .event-card:last-child::before { background: #b87333; }
+
+        .event-date {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .event-card:first-child .event-date { color: #c9a84c; }
+        .event-card:last-child .event-date { color: #b87333; }
+
+        .event-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: #f5f3ee;
+            margin-bottom: 6px;
+        }
+        .event-meta {
+            font-size: 12px;
+            color: rgba(245,243,238,0.35);
+            margin-bottom: 14px;
+        }
+        .event-card p {
+            font-size: 13px;
+            color: rgba(245,243,238,0.5);
+            line-height: 1.65;
+            font-weight: 300;
+        }
+
+        /* === SECTION: SEIZOEN === */
+        .section-season {
+            padding: 96px 32px 80px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .section-season h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+        .section-season .intro {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #5a5046;
+            max-width: 480px;
+            margin-bottom: 56px;
+            font-weight: 300;
+        }
+        .season-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .season-card {
+            padding: 36px 28px;
+            border-radius: 10px;
+            border: 1px solid;
+        }
+        .season-autumn {
+            background: #f0ebe0;
+            border-color: #e0d8cc;
+        }
+        .season-spring {
+            background: #eef3ea;
+            border-color: #d8e0d0;
+        }
+        .season-card .s-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .season-autumn .s-label { color: #8b6e4a; }
+        .season-spring .s-label { color: #5a7a4a; }
+        .season-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #2c2a26;
+        }
+        .season-card p {
+            font-size: 13px;
+            line-height: 1.65;
+            font-weight: 300;
+            color: #5a5046;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            padding: 40px 32px;
+            border-top: 1px solid #e0d8cc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #c4b9a8;
+        }
+        .footer a {
+            color: #8b7d6b;
+            text-decoration: none;
+        }
+        .footer a:hover { color: #5a5046; }
+        .footer-secret {
+            font-size: 10px;
+            color: rgba(196,185,168,0.5);
+            cursor: pointer;
+            transition: color 0.3s;
+            user-select: none;
+        }
+        .footer-secret:hover { color: #c9a84c; }
+
+        /* === DISCOVERY COUNTER === */
+        .discovery-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(28,28,30,0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201,168,76,0.25);
+            border-radius: 10px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all 0.5s ease;
+            pointer-events: none;
+        }
+        .discovery-counter.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .discovery-counter .key-icon { font-size: 13px; }
+        .discovery-counter .count {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            color: #c9a84c;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* === EGG MODAL === */
+        .egg-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: background 0.4s;
+        }
+        .egg-overlay.active {
+            background: rgba(28,28,30,0.8);
+            pointer-events: auto;
+            backdrop-filter: blur(8px);
+        }
+        .egg-modal {
+            background: #1c1c1e;
+            border: 1px solid rgba(201,168,76,0.2);
+            border-radius: 16px;
+            padding: 48px 40px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.9) translateY(20px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .egg-overlay.active .egg-modal {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+        .egg-sparkle { font-size: 36px; margin-bottom: 16px; }
+        .egg-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #c9a84c;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .egg-subtitle {
+            font-size: 13px;
+            color: rgba(245,243,238,0.45);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .egg-discount {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 500;
+            color: #f5f3ee;
+            margin-bottom: 4px;
+        }
+        .egg-discount-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 28px;
+        }
+        .egg-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .egg-email-input {
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(201,168,76,0.2);
+            border-radius: 8px;
+            color: #f5f3ee;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.3s;
+            text-align: center;
+        }
+        .egg-email-input::placeholder { color: rgba(245,243,238,0.25); }
+        .egg-email-input:focus { border-color: #c9a84c; }
+        .egg-claim-btn {
+            padding: 14px 28px;
+            background: #c9a84c;
+            color: #1c1c1e;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .egg-claim-btn:hover { background: #d4b45a; transform: translateY(-1px); }
+        .egg-limit {
+            font-size: 10px;
+            color: rgba(245,243,238,0.2);
+            letter-spacing: 0.5px;
+        }
+        .egg-close {
+            position: absolute;
+            top: 14px; right: 14px;
+            width: 30px; height: 30px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+            color: rgba(245,243,238,0.35);
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 2;
+        }
+        .egg-close:hover { background: rgba(255,255,255,0.08); color: #f5f3ee; }
+        .egg-success { display: none; text-align: center; }
+        .egg-success.show { display: block; }
+        .egg-success-icon { font-size: 44px; margin-bottom: 12px; }
+        .egg-success-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #c9a84c;
+            margin-bottom: 8px;
+        }
+        .egg-success-sub {
+            font-size: 13px;
+            color: rgba(245,243,238,0.45);
+            line-height: 1.6;
+        }
+
+        /* Dot hint */
+        @keyframes dotPulse {
+            0%, 90% { color: #8b7d6b; }
+            95% { color: #c9a84c; }
+            100% { color: #8b7d6b; }
+        }
+        .nav-brand .dot { animation: dotPulse 6s ease-in-out infinite; }
+
+        /* Gold glow on discovered */
+        .egg-discovered { animation: goldGlow 1.5s ease-out; }
+        @keyframes goldGlow {
+            0% { filter: brightness(1); }
+            40% { filter: brightness(1.2) drop-shadow(0 0 8px rgba(201,168,76,0.4)); }
+            100% { filter: brightness(1); }
+        }
+
+        /* Card hint numbers */
+        .feat-hint {
+            font-family: 'Playfair Display', serif;
+            font-size: 11px;
+            color: #e0d8cc;
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            transition: color 0.3s;
+        }
+        .feat { position: relative; }
+        .feat:hover .feat-hint { color: #c4b9a8; }
+
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Date hover hint */
+        .hero-date span {
+            transition: color 0.3s;
+            cursor: default;
+        }
+        .hero-date span:hover { color: #8b7d6b; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav { padding: 20px 20px; }
+            .hero { padding: 0 20px 56px; }
+            .hero-content { padding-top: 100px; }
+            .features { grid-template-columns: 1fr; }
+            .section-coming, .section-season { padding: 72px 20px 64px; }
+            .section-omgeving { padding: 72px 20px 64px; }
+            .section-events { padding: 72px 20px 64px; }
+            .omgeving-grid { grid-template-columns: 1fr; }
+            .events-row { grid-template-columns: 1fr; }
+            .season-row { grid-template-columns: 1fr; }
+            .signup-row { flex-direction: column; gap: 8px; }
+            .signup-input { border-right: 1px solid #e0d8cc; border-radius: 8px; }
+            .signup-btn { border-radius: 8px; }
+            .footer { flex-direction: column; gap: 12px; text-align: center; }
+            .egg-modal { padding: 36px 24px; }
+            .egg-discount { font-size: 40px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand { font-size: 19px; }
+        }
+    </style>
 </head>
 <body>
 
-<section class="hero">
-    <div class="hero-glow"></div>
-    <nav class="hero-nav">
-        <div>
-            <div class="logo" id="logo">Heideway<span class="dot" id="logoDot">.</span></div>
-            <span class="logo-sub">Drenthe</span>
-        </div>
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-brand" id="logo">Heideway<span class="dot" id="logoDot">.</span></div>
+        <div class="nav-status">Voorjaar 2027</div>
     </nav>
-    <div class="hero-body">
-        <div class="status-badge"><div class="status-dot"></div><span>In ontwikkeling</span></div>
-        <h1 class="hero-headline">Heideway<span class="pop">.</span></h1>
-        <p class="hero-tagline">Jouw hideaway op de heidevelden</p>
-        <p class="hero-date">Verwacht &mdash; <strong>Voorjaar 2027</strong></p>
-        <div class="signup-form">
-            <input type="email" class="signup-input" placeholder="Uw e-mailadres">
-            <button class="signup-btn">Op de hoogte blijven</button>
-        </div>
-        <p class="signup-hint">Geen spam. Alleen updates over de opening. <em style="color:rgba(44,42,38,0.12)">Tip: soms zit het geheim in een naam.</em></p>
-        <p class="hint-text" style="margin-top: 24px;">Niet alles op deze pagina is wat het lijkt...</p>
-    </div>
-</section>
 
-<div class="accent-strip"></div>
-
-<section class="content-section">
-    <div class="reveal">
-        <div class="section-label"><div class="section-bar"></div><span>Wat komt eraan</span><div class="section-bar"></div></div>
-        <h2 class="content-title">Natuur. <span class="pop">Design.</span> <span class="nature">Comfort.</span></h2>
-        <p class="content-desc">Heideway ligt in de weidsheid van Zeijen, Drenthe — waar de heidevelden zich uitstrekken tot aan de horizon. Ingericht met oog voor detail, omringd door eindeloze natuur, en voorzien van alles wat een bijzonder verblijf vraagt.</p>
-    </div>
-    <div class="features reveal">
-        <div class="feature-card" id="card-design">
-            <div class="feature-bar"></div><span class="card-hint-number">II</span>
-            <div class="feature-icon">&#9670;</div>
-            <h3>Design</h3><p>Eigentijds interieur met premium materialen en doordachte details in elk hoekje.</p>
-        </div>
-        <div class="feature-card" id="card-natuur">
-            <div class="feature-bar"></div><span class="card-hint-number">I</span>
-            <div class="feature-icon">&#10047;</div>
-            <h3>Natuur</h3><p>Direct aan de Drentse heide. Wandel- en fietsroutes beginnen bij de voordeur.</p>
-        </div>
-        <div class="feature-card" id="card-comfort">
-            <div class="feature-bar"></div><span class="card-hint-number">III</span>
-            <div class="feature-icon">&#9733;</div>
-            <h3>Comfort</h3><p>Hot tub, sauna en buitenkeuken. Alles voor een verblijf dat verder gaat dan slapen.</p>
-        </div>
-    </div>
-</section>
-
-<div class="accent-strip"></div>
-
-<section class="omgeving-section">
-    <div class="reveal">
-        <div class="section-label"><div class="section-bar"></div><span>De omgeving</span><div class="section-bar"></div></div>
-        <h2 class="content-title">Verdwaal in <span class="nature">Drenthe.</span></h2>
-        <p class="omgeving-intro">Heideway ligt midden in het Drentsche Aa-landschap — een van de mooiste beekdalgebieden van Nederland. Eindeloze heidevelden, eeuwenoude bossen, brinkdorpen en stilte. Recht voor je deur.</p>
-    </div>
-    <div class="omgeving-grid reveal">
-        <div class="omgeving-card">
-            <div class="omgeving-card-bar"></div>
-            <div class="omgeving-card-header"><div class="omgeving-icon">&#127795;</div><h3>Wandelen &amp; Natuur</h3></div>
-            <p>Loop zo de heide op. De Veentjesroute start in Zeijen, het Balloërveld kleurt paars in augustus, en het Dwingelderveld is het grootste natte heideveld van Europa.</p>
-            <div class="omgeving-highlights"><span class="omgeving-tag">Veentjesroute</span><span class="omgeving-tag">Drentsche Aa</span><span class="omgeving-tag">Balloërveld</span><span class="omgeving-tag">Dwingelderveld</span><span class="omgeving-tag">Zeijerstrubben</span></div>
-        </div>
-        <div class="omgeving-card">
-            <div class="omgeving-card-bar"></div>
-            <div class="omgeving-card-header"><div class="omgeving-icon">&#128692;</div><h3>Fietsen</h3></div>
-            <p>Drenthe is uitgeroepen tot 5-sterren fietsprovincie. Pak het knooppuntennetwerk en fiets langs beekdalen, hunebedden en brinkdorpen. Alles op fietsafstand.</p>
-            <div class="omgeving-highlights"><span class="omgeving-tag">Knooppuntennetwerk</span><span class="omgeving-tag">Rondje Drentsche Aa</span><span class="omgeving-tag">Hunebeddenroute</span><span class="omgeving-tag">E-bike verhuur</span></div>
-        </div>
-        <div class="omgeving-card">
-            <div class="omgeving-card-bar"></div>
-            <div class="omgeving-card-header"><div class="omgeving-icon">&#127860;</div><h3>Eten &amp; Drinken</h3></div>
-            <p>Van de Oranjerie in Zeijen tot sterrenrestaurant De Keuken van Arragon. Het Witte Huis in Zeegse voor lunch met uitzicht, of de gezellige markt van Assen voor een avondje uit.</p>
-            <div class="omgeving-highlights"><span class="omgeving-tag">Oranjerie Zeijen</span><span class="omgeving-tag">Het Witte Huis</span><span class="omgeving-tag">The Black Tie</span><span class="omgeving-tag">Michelin &#10026;</span></div>
-        </div>
-        <div class="omgeving-card">
-            <div class="omgeving-card-bar"></div>
-            <div class="omgeving-card-header"><div class="omgeving-icon">&#127963;</div><h3>Cultuur &amp; Beleving</h3></div>
-            <p>Bezoek het Drents Museum in Assen met het Meisje van Yde, ontdek 5.000 jaar oude hunebedden, of beleef het openluchtmuseum Orvelte. De TT Circuit is om de hoek.</p>
-            <div class="omgeving-highlights"><span class="omgeving-tag">Drents Museum</span><span class="omgeving-tag">Hunebedden</span><span class="omgeving-tag">Orvelte</span><span class="omgeving-tag">TT Circuit</span></div>
-        </div>
-    </div>
-    <p class="omgeving-footer-text reveal">Supermarkt op <strong>3 km</strong> in Vries &middot; Assen op <strong>10 km</strong> &middot; Station Assen met directe trein naar Groningen en Zwolle</p>
-</section>
-
-<div class="accent-strip"></div>
-
-<!-- PREMIUM EVENEMENTEN -->
-<section class="events-section">
-    <div class="reveal">
-        <div class="section-label"><div class="section-bar"></div><span>Premium Evenementen</span><div class="section-bar"></div></div>
-        <h2 class="content-title">Beleef het van <span class="pop">dichtbij.</span></h2>
-        <p class="content-desc">Drenthe is het decor van wereldklasse motorsportevenementen. Verblijf bij Heideway en beleef de actie op slechts minuten van het circuit.</p>
-    </div>
-    <div class="events-grid reveal">
-        <a href="tt-assen-2027.html" class="event-card gold">
-            <span class="event-badge">Nu boeken</span>
-            <h3>TT Assen 2027</h3>
-            <div class="event-date">Juni 2027 — MotoGP Dutch TT</div>
-            <div class="event-desc">De TT van Assen — 's werelds oudste en meest prestigieuze motorcoursevenement. Op slechts 20 minuten van uw luxe thuisbasis bij Heideway.</div>
-            <div class="event-cta">Bekijk &amp; boek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="motocross-nations-2027.html" class="event-card copper">
-            <span class="event-badge">Nu boeken</span>
-            <h3>Motocross of Nations 2027</h3>
-            <div class="event-date">Najaar 2027 — MXoN Drenthe</div>
-            <div class="event-desc">Het grootste motocrosslandenteamevenement ter wereld komt naar Drenthe. 35+ landen, 100.000+ toeschouwers, en uw privé uitvalsbasis op ~20 minuten.</div>
-            <div class="event-cta">Bekijk &amp; boek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-    </div>
-</section>
-
-<div class="accent-strip"></div>
-
-<div class="hints-banner">
-    <p>Er zijn <span>5 verborgen kortingscodes</span> verstopt op deze pagina. Durf jij te zoeken?</p>
-</div>
-
-<footer class="footer">
-    <p>&copy; 2026 Heideway &mdash; <a href="mailto:info@heideway.nl">info@heideway.nl</a></p>
-    <div class="footer-secret" id="footerSecret">&#10024; goed gevonden &mdash; klik hier &#10024;</div>
-</footer>
-
-<div class="discovery-counter" id="discoveryCounter"><span class="key-icon">&#128273;</span><span class="count" id="discoveryCount">0 / 5</span></div>
-
-<div class="egg-overlay" id="eggOverlay">
-    <div class="egg-modal">
-        <button class="egg-close" id="eggClose">&times;</button>
-        <div id="eggContent">
-            <div class="egg-sparkle">&#10024;</div>
-            <div class="egg-title" id="eggTitle">Geheim ontdekt!</div>
-            <div class="egg-subtitle" id="eggSubtitle">Je hebt een verborgen kortingscode gevonden.</div>
-            <div class="egg-discount">50%</div>
-            <div class="egg-discount-label">korting op je eerste verblijf</div>
-            <div class="egg-form">
-                <input type="email" class="egg-email-input" id="eggEmail" placeholder="Je e-mailadres om te claimen">
-                <button class="egg-claim-btn" id="eggClaimBtn">Claim mijn korting</button>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Verdwaal op<br>de <em>heide</em></h1>
+            <p class="hero-text">
+                Heideway is een vakantiehuis in Zeijen, Drenthe. Op loopafstand van de heidevelden, ingericht met oog voor detail, en voorzien van alles wat een goed verblijf vraagt. Hot tub, sauna, buitenkeuken.
+            </p>
+            <p class="hero-date">Verwacht &#8212; <span id="heroDate">Voorjaar 2027</span></p>
+            <div class="signup-row">
+                <input type="email" class="signup-input" id="signupInput" placeholder="E-mailadres">
+                <button class="signup-btn" id="signupBtn">Houd me op de hoogte</button>
             </div>
-            <div class="egg-limit">Maximaal 5 codes beschikbaar &mdash; op is op</div>
+            <p class="signup-hint">Eenmalig bericht bij opening. Geen spam.</p>
         </div>
-        <div class="egg-success" id="eggSuccess">
-            <div class="egg-success-icon">&#127808;</div>
-            <div class="egg-success-text">Geregistreerd!</div>
-            <div class="egg-success-sub">Als je bij de eerste 5 ontdekkers hoort, ontvang je jouw persoonlijke kortingscode per e-mail. Houd je inbox in de gaten!</div>
+        <div class="scroll-line"></div>
+    </section>
+
+    <!-- WAT KOMT ERAAN -->
+    <section class="section-coming">
+        <div class="reveal">
+            <p class="section-label">Het huis</p>
+            <h2>Natuur voor de deur,<br>comfort binnen</h2>
+            <p class="intro">
+                Heideway ligt in Resort Drenthe bij Zeijen &#8212; een plek waar de bossen en heidevelden beginnen zodra je de deur uitstapt. Het huis combineert de rust van Drenthe met een interieur waar je niet weg wilt.
+            </p>
+        </div>
+
+        <div class="features reveal">
+            <div class="feat" id="feat-natuur">
+                <span class="feat-hint">I</span>
+                <div class="feat-num">01</div>
+                <h3>De heide</h3>
+                <p>Wandel- en fietsroutes direct vanaf de voordeur. Het Balloërveld, de Drentsche Aa en de Zeijerstrubben zijn om de hoek.</p>
+            </div>
+            <div class="feat" id="feat-design">
+                <span class="feat-hint">II</span>
+                <div class="feat-num">02</div>
+                <h3>Het interieur</h3>
+                <p>Doordacht design met eerlijke materialen. Geen standaard vakantiehuis-inrichting maar een plek die voelt alsof iemand er woont.</p>
+            </div>
+            <div class="feat" id="feat-comfort">
+                <span class="feat-hint">III</span>
+                <div class="feat-num">03</div>
+                <h3>Buiten leven</h3>
+                <p>Hot tub, sauna, buitenkeuken. Het terras is een verlengstuk van de woonkamer, het hele jaar door.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- DE OMGEVING -->
+    <section class="section-omgeving">
+        <div class="omgeving-inner">
+            <div class="reveal">
+                <p class="section-label">De omgeving</p>
+                <h2>Verdwaal in Drenthe</h2>
+                <p class="intro">
+                    Drenthe is de stilste provincie van Nederland. Uitgestrekte heidevelden, beekdalen, hunebedden van vijfduizend jaar oud, en dorpen waar de tijd een beetje anders loopt.
+                </p>
+            </div>
+
+            <div class="omgeving-grid reveal">
+                <div class="omgeving-item">
+                    <h3>Wandelen &amp; natuur</h3>
+                    <p>De heide begint bij de voordeur. Het Balloërveld kleurt paars in augustus, de Drentsche Aa slingert door het landschap, en in de Zeijerstrubben hoor je alleen de wind.</p>
+                    <div class="tags">
+                        <span class="tag">Veentjesroute</span>
+                        <span class="tag">Drentsche Aa</span>
+                        <span class="tag">Balloërveld</span>
+                        <span class="tag">Zeijerstrubben</span>
+                    </div>
+                </div>
+                <div class="omgeving-item">
+                    <h3>Fietsen</h3>
+                    <p>Drenthe is niet voor niets een 5-sterren fietsprovincie. Het knooppuntennetwerk brengt je langs beekdalen, brinkdorpen en hunebedden. Alles op fietsafstand.</p>
+                    <div class="tags">
+                        <span class="tag">Knooppuntennetwerk</span>
+                        <span class="tag">Rondje Drentsche Aa</span>
+                        <span class="tag">E-bike verhuur</span>
+                    </div>
+                </div>
+                <div class="omgeving-item">
+                    <h3>Eten &amp; drinken</h3>
+                    <p>Van de Oranjerie in Zeijen tot sterrenrestaurant De Keuken van Arragon. Het Witte Huis in Zeegse voor lunch met uitzicht. Genoeg te kiezen.</p>
+                    <div class="tags">
+                        <span class="tag">Oranjerie Zeijen</span>
+                        <span class="tag">Het Witte Huis</span>
+                        <span class="tag">The Black Tie</span>
+                    </div>
+                </div>
+                <div class="omgeving-item">
+                    <h3>Cultuur</h3>
+                    <p>Het Drents Museum in Assen met het Meisje van Yde. De hunebedden, het oudste bouwwerk van Nederland. Het openluchtmuseum Orvelte, alsof je terug in de tijd stapt.</p>
+                    <div class="tags">
+                        <span class="tag">Drents Museum</span>
+                        <span class="tag">Hunebedden</span>
+                        <span class="tag">Orvelte</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="omgeving-footnote reveal">Supermarkt op <strong>3 km</strong> in Vries &middot; Assen op <strong>10 km</strong> &middot; Station Assen met directe trein naar Groningen en Zwolle</p>
+        </div>
+    </section>
+
+    <!-- EVENEMENTEN (donker contrast) -->
+    <section class="section-events">
+        <div class="events-inner">
+            <div class="reveal">
+                <p class="section-label">Evenementen</p>
+                <h2>Op 20 minuten van het circuit</h2>
+                <p class="intro">
+                    Het TT Circuit van Assen ligt om de hoek. In 2027 komen daar twee van de grootste motorevenementen ter wereld naartoe.
+                </p>
+            </div>
+
+            <div class="events-row reveal">
+                <div class="event-card">
+                    <p class="event-date">Juni 2027</p>
+                    <h3>TT Assen</h3>
+                    <p class="event-meta">MotoGP Dutch TT &middot; 20 min rijden</p>
+                    <p>De Dutch TT is het grootste motorevenement van Nederland. Een hele week Assen op z'n kop. Heideway is de perfecte uitvalsbasis.</p>
+                </div>
+                <div class="event-card">
+                    <p class="event-date">Oktober 2027</p>
+                    <h3>Motocross of Nations</h3>
+                    <p class="event-meta">MXoN &middot; 20 min rijden</p>
+                    <p>Het WK der landenteams komt naar Assen. Drie dagen internationale motocross op het hoogste niveau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEIZOENSSFEER -->
+    <section class="section-season">
+        <div class="reveal">
+            <p class="section-label">Elk seizoen anders</p>
+            <h2>De heide verandert,<br>het huis past mee</h2>
+            <p class="intro">
+                Drenthe is elk seizoen een andere plek. De zomer is licht en lang, de winter stil en warm bij de haard. Heideway ademt mee.
+            </p>
+        </div>
+
+        <div class="season-row reveal">
+            <div class="season-card season-autumn">
+                <p class="s-label">Herfst &amp; winter</p>
+                <h3>Kruip weg bij de haard</h3>
+                <p>Na een dag op de heide of een wandeling door de mist, thuis de haard aan. De hot tub stoomt, de sauna gloeit, buiten is het stil.</p>
+            </div>
+            <div class="season-card season-spring">
+                <p class="s-label">Lente &amp; zomer</p>
+                <h3>Koffie op het terras</h3>
+                <p>De dagen worden langer, de heide groener. Ontbijt buiten, fiets naar een brinkdorp, avondeten op de buitenkeuken terwijl de zon achter de bomen zakt.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <span>&copy; 2026 Heideway &mdash; <a href="mailto:info@heideway.nl">info@heideway.nl</a></span>
+        </div>
+        <div class="footer-secret" id="footerSecret">goed gevonden</div>
+    </footer>
+
+    <!-- Discovery Counter -->
+    <div class="discovery-counter" id="discoveryCounter">
+        <span class="key-icon">&#128273;</span>
+        <span class="count" id="discoveryCount">0 / 5</span>
+    </div>
+
+    <!-- Egg Modal -->
+    <div class="egg-overlay" id="eggOverlay">
+        <div class="egg-modal">
+            <button class="egg-close" id="eggClose">&times;</button>
+            <div id="eggContent">
+                <div class="egg-sparkle">&#10024;</div>
+                <div class="egg-title" id="eggTitle">Geheim ontdekt!</div>
+                <div class="egg-subtitle" id="eggSubtitle">Je hebt een verborgen kortingscode gevonden.</div>
+                <div class="egg-discount">50%</div>
+                <div class="egg-discount-label">korting op je eerste verblijf</div>
+                <div class="egg-form">
+                    <input type="email" class="egg-email-input" id="eggEmail" placeholder="Je e-mailadres om te claimen">
+                    <button class="egg-claim-btn" id="eggClaimBtn">Claim mijn korting</button>
+                </div>
+                <div class="egg-limit">Maximaal 5 codes beschikbaar</div>
+            </div>
+            <div class="egg-success" id="eggSuccess">
+                <div class="egg-success-icon">&#127808;</div>
+                <div class="egg-success-text">Geregistreerd!</div>
+                <div class="egg-success-sub">Als je bij de eerste 5 ontdekkers hoort, ontvang je jouw kortingscode per e-mail.</div>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-(function() {
-    'use strict';
-    var EGGS = {
-        dot: { found: false, name: 'De Punt', hint: 'De gouden punt in het logo knippert niet zomaar...' },
-        date: { found: false, name: 'De Datum', hint: 'Dubbelklik op Voorjaar 2027' },
-        cards: { found: false, name: 'De Volgorde', hint: 'De Romeinse cijfers op de kaarten wijzen de weg' },
-        footer: { found: false, name: 'De Ontdekker', hint: 'Onderaan de pagina wacht een beloning' },
-        signup: { found: false, name: 'De Insider', hint: 'Schrijf je in met het woord heide in je naam' }
-    };
-    var foundCount = 0, currentEgg = null;
-    var counter = document.getElementById('discoveryCounter');
-    var countDisplay = document.getElementById('discoveryCount');
-    function updateCounter() {
-        countDisplay.textContent = foundCount + ' / 5';
-        if (foundCount > 0) counter.classList.add('visible');
-    }
-    var overlay = document.getElementById('eggOverlay'),
-        eggContent = document.getElementById('eggContent'),
-        eggSuccess = document.getElementById('eggSuccess');
-    var eggTitle = document.getElementById('eggTitle'),
-        eggSubtitle = document.getElementById('eggSubtitle');
-    var eggEmail = document.getElementById('eggEmail'),
-        eggClaimBtn = document.getElementById('eggClaimBtn'),
-        eggClose = document.getElementById('eggClose');
-    function showEggModal(k) {
-        if (EGGS[k].found) return;
-        EGGS[k].found = true;
-        foundCount++;
-        currentEgg = k;
-        updateCounter();
-        eggTitle.textContent = EGGS[k].name + ' ontdekt!';
-        eggSubtitle.textContent = 'Geheim ' + foundCount + ' van 5 gevonden. Claim je 50% korting.';
-        eggContent.style.display = 'block';
-        eggSuccess.classList.remove('show');
-        eggEmail.value = '';
-        overlay.classList.add('active');
-    }
-    function closeModal() {
-        overlay.classList.remove('active');
-        currentEgg = null;
-    }
-    eggClose.addEventListener('click', closeModal);
-    overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
-    eggClaimBtn.addEventListener('click', function() {
-        var email = eggEmail.value.trim();
-        if (!email || !email.includes('@') || !email.includes('.')) {
-            eggEmail.style.borderColor = '#e74c3c';
-            eggEmail.setAttribute('placeholder', 'Vul een geldig e-mailadres in');
-            return;
-        }
-        console.log('Heideway Easter Egg claim:', JSON.stringify({
-            email: email, egg: currentEgg, eggName: EGGS[currentEgg].name,
-            foundAt: new Date().toISOString(), totalFound: foundCount
-        }));
-        eggContent.style.display = 'none';
-        eggSuccess.classList.add('show');
-        setTimeout(closeModal, 4000);
-    });
-    document.getElementById('logoDot').addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.add('egg-discovered');
-        showEggModal('dot');
-    });
-    document.querySelector('.hero-date strong').addEventListener('dblclick', function() {
-        this.classList.add('egg-discovered');
-        showEggModal('date');
-    });
+    <script>
     (function() {
-        var order = ['card-natuur', 'card-design', 'card-comfort'], idx = 0;
-        order.forEach(function(id) {
+        'use strict';
+
+        // Nav scroll
+        var nav = document.getElementById('nav');
+        window.addEventListener('scroll', function() {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Reveal on scroll
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+        // Easter eggs
+        var EGGS = {
+            dot:    { found: false, name: 'De Punt' },
+            date:   { found: false, name: 'De Datum' },
+            cards:  { found: false, name: 'De Volgorde' },
+            footer: { found: false, name: 'De Ontdekker' },
+            signup: { found: false, name: 'De Insider' }
+        };
+        var foundCount = 0;
+        var currentEgg = null;
+
+        var counter = document.getElementById('discoveryCounter');
+        var countDisplay = document.getElementById('discoveryCount');
+        var overlay = document.getElementById('eggOverlay');
+        var eggContent = document.getElementById('eggContent');
+        var eggSuccess = document.getElementById('eggSuccess');
+        var eggTitle = document.getElementById('eggTitle');
+        var eggSubtitle = document.getElementById('eggSubtitle');
+        var eggEmail = document.getElementById('eggEmail');
+
+        function updateCounter() {
+            countDisplay.textContent = foundCount + ' / 5';
+            if (foundCount > 0) counter.classList.add('visible');
+        }
+
+        function showEgg(key) {
+            if (EGGS[key].found) return;
+            EGGS[key].found = true;
+            foundCount++;
+            currentEgg = key;
+            updateCounter();
+            eggTitle.textContent = EGGS[key].name + ' ontdekt!';
+            eggSubtitle.textContent = 'Geheim ' + foundCount + ' van 5 gevonden. Claim je 50% korting.';
+            eggContent.style.display = 'block';
+            eggSuccess.classList.remove('show');
+            eggEmail.value = '';
+            overlay.classList.add('active');
+        }
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            currentEgg = null;
+        }
+
+        document.getElementById('eggClose').addEventListener('click', closeModal);
+        overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+
+        document.getElementById('eggClaimBtn').addEventListener('click', function() {
+            var email = eggEmail.value.trim();
+            if (!email || !email.includes('@') || !email.includes('.')) {
+                eggEmail.style.borderColor = '#e74c3c';
+                return;
+            }
+            console.log('Heideway claim:', JSON.stringify({ email: email, egg: currentEgg, found: foundCount }));
+            eggContent.style.display = 'none';
+            eggSuccess.classList.add('show');
+            setTimeout(closeModal, 3500);
+        });
+
+        // Egg 1: punt in logo
+        document.getElementById('logoDot').addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.add('egg-discovered');
+            showEgg('dot');
+        });
+
+        // Egg 2: dubbelklik op datum
+        document.getElementById('heroDate').addEventListener('dblclick', function() {
+            this.classList.add('egg-discovered');
+            showEgg('date');
+        });
+
+        // Egg 3: klik features in volgorde I, II, III
+        var cardOrder = ['feat-natuur', 'feat-design', 'feat-comfort'];
+        var cardIndex = 0;
+        cardOrder.forEach(function(id) {
             document.getElementById(id).addEventListener('click', function() {
                 if (EGGS.cards.found) return;
-                if (id === order[idx]) {
-                    idx++;
+                if (id === cardOrder[cardIndex]) {
+                    cardIndex++;
                     this.classList.add('egg-discovered');
-                    if (idx === order.length) { idx = 0; showEggModal('cards'); }
+                    if (cardIndex === cardOrder.length) {
+                        cardIndex = 0;
+                        showEgg('cards');
+                    }
                 } else {
-                    idx = 0;
-                    order.forEach(function(c) { document.getElementById(c).classList.remove('egg-discovered'); });
+                    cardIndex = 0;
+                    cardOrder.forEach(function(cid) {
+                        document.getElementById(cid).classList.remove('egg-discovered');
+                    });
                 }
             });
         });
-    })();
-    document.getElementById('footerSecret').addEventListener('click', function() {
-        this.classList.add('egg-discovered');
-        showEggModal('footer');
-    });
-    (function() {
-        var btn = document.querySelector('.signup-btn'), inp = document.querySelector('.signup-input');
-        btn.addEventListener('click', function(e) {
-            var v = inp.value.trim().toLowerCase();
-            if (v.includes('heide') && !EGGS.signup.found) { e.preventDefault(); showEggModal('signup'); }
+
+        // Egg 4: footer
+        document.getElementById('footerSecret').addEventListener('click', function() {
+            this.classList.add('egg-discovered');
+            showEgg('footer');
+        });
+
+        // Egg 5: typ "heide" in signup
+        document.getElementById('signupBtn').addEventListener('click', function(e) {
+            var val = document.getElementById('signupInput').value.trim().toLowerCase();
+            if (val.includes('heide') && !EGGS.signup.found) {
+                e.preventDefault();
+                showEgg('signup');
+            }
         });
     })();
-    var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
-})();
-</script>
-
+    </script>
 </body>
 </html>
