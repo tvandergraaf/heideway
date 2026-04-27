@@ -1,1214 +1,377 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heideway — Binnenkort beschikbaar</title>
-    <meta name="description" content="Heideway — Premium vakantieverhuur in de Drentse natuur. Waar design, comfort en natuur samenkomen. Verwacht voorjaar 2027.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://heideway.nl">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heideway — Binnenkort beschikbaar</title>
+<meta name="description" content="Heideway — Premium vakantieverhuur in de Drentse natuur. Waar design, comfort en natuur samenkomen. Verwacht voorjaar 2027.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://heideway.nl">
+<meta property="og:title" content="Heideway — Binnenkort beschikbaar">
+<meta property="og:description" content="Premium vakantieverhuur in de Drentse natuur. Waar design, comfort en natuur samenkomen.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://heideway.nl">
+<meta property="og:locale" content="nl_NL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --dark-deep: #0b0b0f;
+  --dark-mid: #141418;
+  --dark-card: #1a1a22;
+  --purple-deep: #4e2d78;
+  --purple-mid: #6a4a90;
+  --purple-light: #7a5a9e;
+  --purple-hover: #5c3885;
+  --purple-dim: rgba(78,45,120,0.12);
+  --warm-bg: #f4f2ee;
+  --warm-gray: #a09a90;
+  --text-dark: #1e1e1c;
+  --gold: #B8860B;
+  --gold-light: #D4A520;
+  --accent-copper: #b87333;
+}
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Space Grotesk', -apple-system, sans-serif; background: var(--warm-bg); color: var(--text-dark); min-height: 100vh; overflow-x: hidden; }
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Heideway — Binnenkort beschikbaar">
-    <meta property="og:description" content="Premium vakantieverhuur in de Drentse natuur. Waar design, comfort en natuur samenkomen.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://heideway.nl">
-    <meta property="og:locale" content="nl_NL">
+.hero { min-height: 100vh; display: flex; flex-direction: column; position: relative; background: linear-gradient(155deg, #0b0b0f 0%, #141418 30%, #1a1028 65%, #0f0a18 100%); overflow: hidden; }
+.hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 35%, rgba(78,45,120,0.12) 0%, transparent 55%), radial-gradient(ellipse at 25% 75%, rgba(78,45,120,0.08) 0%, transparent 50%); pointer-events: none; }
+.hero::before { content: ''; position: absolute; top: 20%; left: 60%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(78,45,120,0.08) 0%, transparent 70%); border-radius: 50%; animation: float 8s ease-in-out infinite; }
+.hero::after { content: ''; position: absolute; bottom: 15%; left: 20%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(78,45,120,0.06) 0%, transparent 70%); border-radius: 50%; animation: float 10s ease-in-out infinite reverse; }
+@keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -20px) scale(1.1); } }
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+.hero-nav { display: flex; align-items: center; justify-content: space-between; padding: 28px 40px; position: relative; z-index: 2; }
+.logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: white; letter-spacing: -0.5px; cursor: default; user-select: none; }
+.logo .dot { color: var(--purple-deep); transition: all 0.3s; }
+.logo-sub { font-family: 'Space Grotesk', sans-serif; font-size: 9px; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.25); display: block; margin-top: 2px; }
 
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+.hero-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; position: relative; z-index: 1; text-align: center; }
+.status-badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 100px; margin-bottom: 40px; animation: fadeInDown 1s ease-out; }
+.status-dot { width: 7px; height: 7px; background: var(--purple-deep); border-radius: 50%; animation: pulse 2.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(78,45,120,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(78,45,120,0); } }
+.status-badge span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); font-weight: 500; }
+.hero-headline { font-family: 'Playfair Display', serif; font-size: clamp(48px, 8vw, 80px); font-weight: 700; color: white; line-height: 1.05; margin-bottom: 12px; animation: fadeInUp 1s ease-out 0.2s both; }
+.hero-headline .pop { color: var(--purple-light); font-style: italic; }
+.hero-tagline { font-family: 'Playfair Display', serif; font-size: clamp(18px, 3vw, 26px); color: rgba(255,255,255,0.45); font-weight: 400; font-style: italic; margin-bottom: 48px; animation: fadeInUp 1s ease-out 0.4s both; }
+.hero-date { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 40px; animation: fadeInUp 1s ease-out 0.6s both; }
+.hero-date strong { color: var(--purple-light); font-weight: 500; }
 
-        :root {
-            --green-dark: #263828;
-            --green-mid: #344a34;
-            --green-forest: #4a6a3a;
-            --purple-deep: #4e2d78;
-            --purple-mid: #6a4a90;
-            --purple-light: #7a5a9e;
-            --purple-hover: #5c3885;
-            --warm-bg: #f4f2ee;
-            --warm-gray: #a09a90;
-            --text-dark: #1e1e1c;
-            --gold: #B8860B;
-            --gold-light: #D4A520;
-        }
+.signup-form { display: flex; gap: 0; max-width: 420px; width: 100%; animation: fadeInUp 1s ease-out 0.8s both; }
+.signup-input { flex: 1; padding: 14px 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-right: none; border-radius: 10px 0 0 10px; color: white; font-family: 'Space Grotesk', sans-serif; font-size: 13px; outline: none; transition: all 0.3s; }
+.signup-input::placeholder { color: rgba(255,255,255,0.25); }
+.signup-input:focus { border-color: rgba(78,45,120,0.4); background: rgba(255,255,255,0.08); }
+.signup-btn { padding: 14px 28px; background: var(--purple-deep); color: white; border: 1px solid var(--purple-deep); border-radius: 0 10px 10px 0; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+.signup-btn:hover { background: var(--purple-hover); }
+.signup-hint { font-size: 11px; color: rgba(255,255,255,0.18); margin-top: 12px; animation: fadeInUp 1s ease-out 1s both; }
 
-        html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+.accent-strip { height: 4px; background: linear-gradient(90deg, #0b0b0f, var(--purple-deep), var(--purple-mid), var(--purple-deep), #0b0b0f); }
 
-        body {
-            font-family: 'Space Grotesk', -apple-system, sans-serif;
-            background: var(--warm-bg);
-            color: var(--text-dark);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+.content-section { padding: 80px 40px; text-align: center; max-width: 900px; margin: 0 auto; }
+.section-label { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.section-bar { width: 24px; height: 2px; background: var(--purple-deep); }
+.section-label span { font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--purple-deep); }
+.content-title { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+.content-title .pop { color: var(--purple-deep); }
+.content-title .nature { color: var(--purple-mid); }
+.content-desc { font-size: 15px; color: var(--warm-gray); max-width: 520px; margin: 0 auto 48px; line-height: 1.8; font-weight: 300; }
 
-        /* === HERO (fullscreen) === */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            background: linear-gradient(155deg, #263828 0%, #344a34 30%, #2e3e2c 65%, #223020 100%);
-            overflow: hidden;
-        }
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.feature-card { background: white; border-radius: 16px; padding: 32px 24px; position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.04); transition: all 0.3s; }
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); }
+.feature-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--purple-deep); }
+.feature-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 22px; background: rgba(78,45,120,0.1); }
+.feature-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+.feature-card p { font-size: 13px; color: var(--warm-gray); line-height: 1.6; }
 
-        .hero-glow {
-            position: absolute; inset: 0;
-            background:
-                radial-gradient(ellipse at 65% 35%, rgba(78,45,120,0.10) 0%, transparent 55%),
-                radial-gradient(ellipse at 25% 75%, rgba(74,100,58,0.12) 0%, transparent 50%);
-            pointer-events: none;
-        }
+.omgeving-section { padding: 80px 40px 60px; max-width: 1000px; margin: 0 auto; text-align: center; }
+.omgeving-intro { font-size: 15px; color: var(--warm-gray); max-width: 560px; margin: 0 auto 48px; line-height: 1.8; font-weight: 300; }
+.omgeving-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 40px; }
+.omgeving-card { background: white; border-radius: 16px; padding: 28px 24px; text-align: left; position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.04); transition: all 0.3s; }
+.omgeving-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); }
+.omgeving-card-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--purple-deep); }
+.omgeving-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.omgeving-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: rgba(78,45,120,0.1); }
+.omgeving-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; }
+.omgeving-card p { font-size: 13px; color: var(--warm-gray); line-height: 1.7; margin-bottom: 12px; }
+.omgeving-highlights { display: flex; flex-wrap: wrap; gap: 6px; }
+.omgeving-tag { display: inline-block; padding: 4px 10px; background: var(--warm-bg); border-radius: 100px; font-size: 11px; color: var(--warm-gray); font-weight: 400; letter-spacing: 0.3px; }
+.omgeving-footer-text { font-size: 13px; color: var(--warm-gray); font-style: italic; font-weight: 300; }
+.omgeving-footer-text strong { color: var(--purple-deep); font-weight: 500; font-style: normal; }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%; left: 60%;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(78,45,120,0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 15%; left: 20%;
-            width: 250px; height: 250px;
-            background: radial-gradient(circle, rgba(74,106,58,0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 10s ease-in-out infinite reverse;
-        }
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(30px, -20px) scale(1.1); }
-        }
+/* === EVENTS SECTION === */
+.events-section { padding: 80px 40px; max-width: 1000px; margin: 0 auto; text-align: center; }
+.events-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+.event-card { background: linear-gradient(160deg, #0b0b0f 0%, #1a1028 100%); border-radius: 20px; padding: 40px 32px; position: relative; overflow: hidden; border: 1px solid rgba(78,45,120,0.2); transition: all 0.4s; text-align: left; text-decoration: none; color: white; display: block; }
+.event-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(78,45,120,0.15); border-color: rgba(78,45,120,0.4); }
+.event-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.event-card.gold::before { background: linear-gradient(90deg, #c9a84c, #e2c97e, #c9a84c); }
+.event-card.copper::before { background: linear-gradient(90deg, #b87333, #d4956a, #b87333); }
+.event-badge { display: inline-block; padding: 4px 14px; border-radius: 100px; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+.event-card.gold .event-badge { background: rgba(201,168,76,0.15); color: #c9a84c; border: 1px solid rgba(201,168,76,0.25); }
+.event-card.copper .event-badge { background: rgba(184,115,51,0.15); color: #d4956a; border: 1px solid rgba(184,115,51,0.25); }
+.event-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
+.event-card .event-date { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 16px; font-weight: 300; }
+.event-card .event-desc { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 24px; font-weight: 300; }
+.event-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; transition: all 0.3s; }
+.event-card.gold .event-cta { color: #c9a84c; }
+.event-card.copper .event-cta { color: #d4956a; }
+.event-cta svg { width: 16px; height: 16px; transition: transform 0.3s; }
+.event-card:hover .event-cta svg { transform: translateX(4px); }
 
-        /* Nav */
-        .hero-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 28px 40px;
-            position: relative;
-            z-index: 2;
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            letter-spacing: -0.5px;
-            cursor: default;
-            user-select: none;
-        }
-        .logo .dot { color: var(--purple-deep); transition: all 0.3s; }
-        .logo-sub {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 9px;
-            font-weight: 400;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.25);
-            display: block;
-            margin-top: 2px;
-        }
+.footer { text-align: center; padding: 40px; background: #0b0b0f; color: rgba(255,255,255,0.3); font-size: 12px; position: relative; }
+.footer a { color: var(--purple-mid); text-decoration: none; }
 
-        /* Hero content */
-        .hero-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
+.discovery-counter { position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(11,11,15,0.95); backdrop-filter: blur(12px); border: 1px solid rgba(184,134,11,0.3); border-radius: 12px; padding: 10px 16px; display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; cursor: help; }
+.discovery-counter.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.discovery-counter .key-icon { font-size: 14px; }
+.discovery-counter .count { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--gold-light); letter-spacing: 1px; font-weight: 500; }
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 100px;
-            margin-bottom: 40px;
-            animation: fadeInDown 1s ease-out;
-        }
-        .status-dot {
-            width: 7px; height: 7px;
-            background: var(--purple-deep);
-            border-radius: 50%;
-            animation: pulse 2.5s ease-in-out infinite;
-        }
-        @keyframes pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(78,45,120,0.4); } 50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(78,45,120,0); } }
-        .status-badge span {
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.4);
-            font-weight: 500;
-        }
+.egg-overlay { position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0); display: flex; align-items: center; justify-content: center; pointer-events: none; transition: background 0.5s; }
+.egg-overlay.active { background: rgba(0,0,0,0.75); pointer-events: auto; backdrop-filter: blur(6px); }
+.egg-modal { background: linear-gradient(160deg, #0b0b0f 0%, #1a1028 50%, #2e2040 100%); border: 1px solid rgba(184,134,11,0.3); border-radius: 20px; padding: 48px 40px; max-width: 440px; width: 90%; text-align: center; transform: scale(0.8) translateY(30px); opacity: 0; transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; }
+.egg-overlay.active .egg-modal { transform: scale(1) translateY(0); opacity: 1; }
+.egg-modal::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent, rgba(184,134,11,0.05), transparent, rgba(78,45,120,0.05), transparent); animation: shimmer 8s linear infinite; }
+@keyframes shimmer { to { transform: rotate(360deg); } }
+.egg-modal > * { position: relative; z-index: 1; }
+.egg-sparkle { font-size: 40px; margin-bottom: 16px; animation: sparkle-bounce 0.6s ease-out; }
+@keyframes sparkle-bounce { 0% { transform: scale(0) rotate(-30deg); } 60% { transform: scale(1.3) rotate(5deg); } 100% { transform: scale(1) rotate(0); } }
+.egg-title { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold-light); margin-bottom: 8px; font-weight: 700; }
+.egg-subtitle { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 24px; line-height: 1.6; }
+.egg-discount { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700; color: white; margin-bottom: 4px; text-shadow: 0 0 40px rgba(184,134,11,0.3); }
+.egg-discount-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+.egg-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.egg-email-input { padding: 14px 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(184,134,11,0.2); border-radius: 10px; color: white; font-family: 'Space Grotesk', sans-serif; font-size: 14px; outline: none; transition: all 0.3s; text-align: center; }
+.egg-email-input::placeholder { color: rgba(255,255,255,0.25); }
+.egg-email-input:focus { border-color: var(--gold); background: rgba(255,255,255,0.08); }
+.egg-claim-btn { padding: 14px 28px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #0b0b0f; border: none; border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s; letter-spacing: 0.5px; }
+.egg-claim-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,134,11,0.3); }
+.egg-limit { font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 1px; }
+.egg-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; color: rgba(255,255,255,0.4); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; z-index: 2; }
+.egg-close:hover { background: rgba(255,255,255,0.1); color: white; }
+.egg-success { display: none; text-align: center; }
+.egg-success.show { display: block; }
+.egg-success-icon { font-size: 48px; margin-bottom: 12px; }
+.egg-success-text { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 8px; }
+.egg-success-sub { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
 
-        .hero-headline {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(48px, 8vw, 80px);
-            font-weight: 700;
-            color: white;
-            line-height: 1.05;
-            margin-bottom: 24px;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-        .hero-headline .pop {
-            color: var(--purple-light);
-            font-style: italic;
-        }
+.hint-text { font-size: 10px; color: rgba(255,255,255,0.15); letter-spacing: 1.5px; font-style: italic; transition: color 0.5s; cursor: default; }
+.hint-text:hover { color: rgba(255,255,255,0.35); }
+.hint-text.dark { color: rgba(0,0,0,0.12); }
+.hint-text.dark:hover { color: rgba(0,0,0,0.3); }
+@keyframes dotHint { 0%, 92% { color: var(--purple-deep); text-shadow: none; } 95% { color: var(--gold-light); text-shadow: 0 0 8px rgba(184,134,11,0.4); } 100% { color: var(--purple-deep); text-shadow: none; } }
+.logo .dot { animation: dotHint 8s ease-in-out infinite; cursor: pointer; }
+.card-hint-number { position: absolute; top: 10px; right: 14px; font-family: 'Playfair Display', serif; font-size: 11px; color: rgba(0,0,0,0.06); font-weight: 700; transition: color 0.3s; }
+.feature-card:hover .card-hint-number { color: rgba(0,0,0,0.15); }
+.hero-date strong { transition: all 0.3s; cursor: pointer; }
+.hero-date strong:hover { color: var(--gold-light); text-shadow: 0 0 12px rgba(184,134,11,0.3); }
+.footer-secret { font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 1.5px; margin-top: 12px; font-style: italic; cursor: pointer; transition: all 0.4s; user-select: none; }
+.footer-secret:hover { color: var(--gold); letter-spacing: 2px; }
+.hints-banner { text-align: center; padding: 24px 40px; background: rgba(78,45,120,0.03); border-top: 1px solid rgba(0,0,0,0.04); }
+.hints-banner p { font-size: 12px; color: rgba(0,0,0,0.2); font-style: italic; letter-spacing: 0.5px; }
+.hints-banner p span { color: var(--gold); font-weight: 500; }
 
-        .hero-sub {
-            font-size: 16px;
-            color: rgba(255,255,255,0.35);
-            max-width: 480px;
-            line-height: 1.8;
-            margin-bottom: 48px;
-            font-weight: 300;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.egg-discovered { animation: goldGlow 2s ease-in-out; }
+@keyframes goldGlow { 0% { filter: brightness(1); } 50% { filter: brightness(1.3) drop-shadow(0 0 10px rgba(184,134,11,0.5)); } 100% { filter: brightness(1); } }
 
-        .hero-date {
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.2);
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-        .hero-date strong {
-            color: var(--purple-light);
-            font-weight: 500;
-        }
-
-        /* Email signup */
-        .signup-form {
-            display: flex;
-            gap: 0;
-            max-width: 420px;
-            width: 100%;
-            animation: fadeInUp 1s ease-out 0.8s both;
-        }
-        .signup-input {
-            flex: 1;
-            padding: 14px 20px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-right: none;
-            border-radius: 10px 0 0 10px;
-            color: white;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 13px;
-            outline: none;
-            transition: all 0.3s;
-        }
-        .signup-input::placeholder { color: rgba(255,255,255,0.25); }
-        .signup-input:focus { border-color: rgba(78,45,120,0.4); background: rgba(255,255,255,0.08); }
-        .signup-btn {
-            padding: 14px 28px;
-            background: var(--purple-deep);
-            color: white;
-            border: 1px solid var(--purple-deep);
-            border-radius: 0 10px 10px 0;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            white-space: nowrap;
-        }
-        .signup-btn:hover { background: var(--purple-hover); }
-        .signup-hint {
-            font-size: 11px;
-            color: rgba(255,255,255,0.18);
-            margin-top: 12px;
-            animation: fadeInUp 1s ease-out 1s both;
-        }
-
-        /* Accent strip */
-        .accent-strip {
-            height: 4px;
-            background: linear-gradient(90deg, #2a3e22, #4a6a3a, #4e2d78, #4a6a3a, #2a3e22);
-        }
-
-        /* === CONTENT SECTION === */
-        .content-section {
-            padding: 80px 40px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-        .section-bar { width: 24px; height: 2px; background: var(--purple-deep); }
-        .section-label span {
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: var(--purple-deep);
-        }
-
-        .content-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        .content-title .pop { color: var(--purple-deep); }
-        .content-title .nature { color: var(--green-forest); }
-
-        .content-desc {
-            font-size: 15px;
-            color: var(--warm-gray);
-            max-width: 520px;
-            margin: 0 auto 48px;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        /* Feature cards */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 20px;
-        }
-        .feature-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px 24px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: all 0.3s;
-        }
-        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); }
-        .feature-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-        .feature-card:nth-child(1) .feature-bar { background: var(--green-forest); }
-        .feature-card:nth-child(2) .feature-bar { background: var(--purple-deep); }
-        .feature-card:nth-child(3) .feature-bar { background: var(--green-forest); }
-
-        .feature-icon {
-            width: 48px; height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 22px;
-        }
-        .feature-card:nth-child(1) .feature-icon { background: rgba(74,106,58,0.1); }
-        .feature-card:nth-child(2) .feature-icon { background: rgba(78,45,120,0.1); }
-        .feature-card:nth-child(3) .feature-icon { background: rgba(74,106,58,0.1); }
-
-        .feature-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .feature-card p {
-            font-size: 13px;
-            color: var(--warm-gray);
-            line-height: 1.6;
-        }
-
-        /* === OMGEVING SECTION === */
-        .omgeving-section {
-            padding: 80px 40px 60px;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .omgeving-intro {
-            font-size: 15px;
-            color: var(--warm-gray);
-            max-width: 560px;
-            margin: 0 auto 48px;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        .omgeving-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        .omgeving-card {
-            background: white;
-            border-radius: 16px;
-            padding: 28px 24px;
-            text-align: left;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: all 0.3s;
-        }
-        .omgeving-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.06);
-        }
-
-        .omgeving-card-bar {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-        }
-        .omgeving-card:nth-child(1) .omgeving-card-bar { background: var(--green-forest); }
-        .omgeving-card:nth-child(2) .omgeving-card-bar { background: var(--purple-deep); }
-        .omgeving-card:nth-child(3) .omgeving-card-bar { background: var(--purple-deep); }
-        .omgeving-card:nth-child(4) .omgeving-card-bar { background: var(--green-forest); }
-
-        .omgeving-card-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .omgeving-icon {
-            width: 40px; height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-        .omgeving-card:nth-child(1) .omgeving-icon { background: rgba(74,106,58,0.1); }
-        .omgeving-card:nth-child(2) .omgeving-icon { background: rgba(78,45,120,0.1); }
-        .omgeving-card:nth-child(3) .omgeving-icon { background: rgba(78,45,120,0.1); }
-        .omgeving-card:nth-child(4) .omgeving-icon { background: rgba(74,106,58,0.1); }
-
-        .omgeving-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 17px;
-            font-weight: 600;
-        }
-
-        .omgeving-card p {
-            font-size: 13px;
-            color: var(--warm-gray);
-            line-height: 1.7;
-            margin-bottom: 12px;
-        }
-
-        .omgeving-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .omgeving-tag {
-            display: inline-block;
-            padding: 4px 10px;
-            background: var(--warm-bg);
-            border-radius: 100px;
-            font-size: 11px;
-            color: var(--warm-gray);
-            font-weight: 400;
-            letter-spacing: 0.3px;
-        }
-
-        .omgeving-footer-text {
-            font-size: 13px;
-            color: var(--warm-gray);
-            font-style: italic;
-            font-weight: 300;
-        }
-        .omgeving-footer-text strong {
-            color: var(--green-forest);
-            font-weight: 500;
-            font-style: normal;
-        }
-
-        @media (max-width: 768px) {
-            .omgeving-grid { grid-template-columns: 1fr; }
-            .omgeving-section { padding: 60px 24px 48px; }
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 40px;
-            background: #1e2a1a;
-            color: rgba(255,255,255,0.3);
-            font-size: 12px;
-            position: relative;
-        }
-        .footer a { color: var(--purple-mid); text-decoration: none; }
-
-        /* === EASTER EGG: Discovery Counter === */
-        .discovery-counter {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(30,42,26,0.95);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(184,134,11,0.3);
-            border-radius: 12px;
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            pointer-events: none;
-            cursor: help;
-        }
-        .discovery-counter.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-        .discovery-counter .key-icon {
-            font-size: 14px;
-        }
-        .discovery-counter .count {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 12px;
-            color: var(--gold-light);
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        /* === EASTER EGG: Reveal Modal === */
-        .egg-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            background: rgba(0,0,0,0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-            transition: background 0.5s;
-        }
-        .egg-overlay.active {
-            background: rgba(0,0,0,0.75);
-            pointer-events: auto;
-            backdrop-filter: blur(6px);
-        }
-
-        .egg-modal {
-            background: linear-gradient(160deg, #1e2a1a 0%, #263828 50%, #2e2040 100%);
-            border: 1px solid rgba(184,134,11,0.3);
-            border-radius: 20px;
-            padding: 48px 40px;
-            max-width: 440px;
-            width: 90%;
-            text-align: center;
-            transform: scale(0.8) translateY(30px);
-            opacity: 0;
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        .egg-overlay.active .egg-modal {
-            transform: scale(1) translateY(0);
-            opacity: 1;
-        }
-
-        .egg-modal::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(184,134,11,0.05), transparent, rgba(78,45,120,0.05), transparent);
-            animation: shimmer 8s linear infinite;
-        }
-        @keyframes shimmer { to { transform: rotate(360deg); } }
-
-        .egg-modal > * { position: relative; z-index: 1; }
-
-        .egg-sparkle {
-            font-size: 40px;
-            margin-bottom: 16px;
-            animation: sparkle-bounce 0.6s ease-out;
-        }
-        @keyframes sparkle-bounce {
-            0% { transform: scale(0) rotate(-30deg); }
-            60% { transform: scale(1.3) rotate(5deg); }
-            100% { transform: scale(1) rotate(0); }
-        }
-
-        .egg-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            color: var(--gold-light);
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .egg-subtitle {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .egg-discount {
-            font-family: 'Playfair Display', serif;
-            font-size: 56px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 4px;
-            text-shadow: 0 0 40px rgba(184,134,11,0.3);
-        }
-        .egg-discount-label {
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 28px;
-        }
-
-        .egg-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-        .egg-email-input {
-            padding: 14px 20px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(184,134,11,0.2);
-            border-radius: 10px;
-            color: white;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            outline: none;
-            transition: all 0.3s;
-            text-align: center;
-        }
-        .egg-email-input::placeholder { color: rgba(255,255,255,0.25); }
-        .egg-email-input:focus { border-color: var(--gold); background: rgba(255,255,255,0.08); }
-
-        .egg-claim-btn {
-            padding: 14px 28px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: #1e2a1a;
-            border: none;
-            border-radius: 10px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 0.5px;
-        }
-        .egg-claim-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,134,11,0.3); }
-
-        .egg-limit {
-            font-size: 10px;
-            color: rgba(255,255,255,0.25);
-            letter-spacing: 1px;
-        }
-
-        .egg-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            width: 32px;
-            height: 32px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: rgba(255,255,255,0.4);
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            z-index: 2;
-        }
-        .egg-close:hover { background: rgba(255,255,255,0.1); color: white; }
-
-        .egg-success {
-            display: none;
-            text-align: center;
-        }
-        .egg-success.show { display: block; }
-        .egg-success-icon { font-size: 48px; margin-bottom: 12px; }
-        .egg-success-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            color: var(--gold-light);
-            margin-bottom: 8px;
-        }
-        .egg-success-sub {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-            line-height: 1.6;
-        }
-
-        /* === HINT SYSTEM === */
-        .hint-text {
-            font-size: 10px;
-            color: rgba(255,255,255,0.15);
-            letter-spacing: 1.5px;
-            font-style: italic;
-            transition: color 0.5s;
-            cursor: default;
-        }
-        .hint-text:hover { color: rgba(255,255,255,0.35); }
-        .hint-text.dark {
-            color: rgba(0,0,0,0.12);
-        }
-        .hint-text.dark:hover { color: rgba(0,0,0,0.3); }
-
-        /* Dot pulse hint */
-        @keyframes dotHint {
-            0%, 92% { color: var(--purple-deep); text-shadow: none; }
-            95% { color: var(--gold-light); text-shadow: 0 0 8px rgba(184,134,11,0.4); }
-            100% { color: var(--purple-deep); text-shadow: none; }
-        }
-        .logo .dot { animation: dotHint 8s ease-in-out infinite; cursor: pointer; }
-
-        /* Card number hints */
-        .card-hint-number {
-            position: absolute;
-            top: 10px;
-            right: 14px;
-            font-family: 'Playfair Display', serif;
-            font-size: 11px;
-            color: rgba(0,0,0,0.06);
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-        .feature-card:hover .card-hint-number {
-            color: rgba(0,0,0,0.15);
-        }
-
-        /* Date hint glow */
-        .hero-date strong {
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        .hero-date strong:hover {
-            color: var(--gold-light);
-            text-shadow: 0 0 12px rgba(184,134,11,0.3);
-        }
-
-        /* Footer secret - more visible */
-        .footer-secret {
-            font-size: 10px;
-            color: rgba(255,255,255,0.2);
-            letter-spacing: 1.5px;
-            margin-top: 12px;
-            font-style: italic;
-            cursor: pointer;
-            transition: all 0.4s;
-            user-select: none;
-        }
-        .footer-secret:hover {
-            color: var(--gold);
-            letter-spacing: 2px;
-        }
-
-        /* Hints banner at bottom of content section */
-        .hints-banner {
-            text-align: center;
-            padding: 24px 40px;
-            background: rgba(38,56,40,0.03);
-            border-top: 1px solid rgba(0,0,0,0.04);
-        }
-        .hints-banner p {
-            font-size: 12px;
-            color: rgba(0,0,0,0.2);
-            font-style: italic;
-            letter-spacing: 0.5px;
-        }
-        .hints-banner p span {
-            color: var(--gold);
-            font-weight: 500;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        /* Gold glow for discovered elements */
-        .egg-discovered {
-            animation: goldGlow 2s ease-in-out;
-        }
-        @keyframes goldGlow {
-            0% { filter: brightness(1); }
-            50% { filter: brightness(1.3) drop-shadow(0 0 10px rgba(184,134,11,0.5)); }
-            100% { filter: brightness(1); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-nav { padding: 20px 24px; }
-            .hero-body { padding: 40px 24px; }
-            .features { grid-template-columns: 1fr; gap: 12px; }
-            .content-section { padding: 60px 24px; }
-            .signup-form { flex-direction: column; gap: 10px; }
-            .signup-input { border-right: 1px solid rgba(255,255,255,0.1); border-radius: 10px; }
-            .signup-btn { border-radius: 10px; }
-            .egg-modal { padding: 36px 28px; }
-            .egg-discount { font-size: 44px; }
-            .discovery-counter { bottom: 12px; right: 12px; }
-        }
-
-        @media (max-width: 480px) {
-            .logo { font-size: 20px; }
-            .content-title { font-size: 28px; }
-        }
-    </style>
+@media (max-width: 768px) {
+  .hero-nav { padding: 20px 24px; }
+  .hero-body { padding: 40px 24px; }
+  .features { grid-template-columns: 1fr; gap: 12px; }
+  .content-section { padding: 60px 24px; }
+  .signup-form { flex-direction: column; gap: 10px; }
+  .signup-input { border-right: 1px solid rgba(255,255,255,0.1); border-radius: 10px; }
+  .signup-btn { border-radius: 10px; }
+  .egg-modal { padding: 36px 28px; }
+  .egg-discount { font-size: 44px; }
+  .discovery-counter { bottom: 12px; right: 12px; }
+  .omgeving-grid { grid-template-columns: 1fr; }
+  .omgeving-section { padding: 60px 24px 48px; }
+  .events-grid { grid-template-columns: 1fr; }
+  .events-section { padding: 60px 24px; }
+}
+@media (max-width: 480px) { .logo { font-size: 20px; } .content-title { font-size: 28px; } }
+</style>
 </head>
 <body>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-glow"></div>
-
-        <nav class="hero-nav">
-            <div>
-                <div class="logo" id="logo">Heideway<span class="dot" id="logoDot">.</span></div>
-                <span class="logo-sub">Drenthe</span>
-            </div>
-        </nav>
-
-        <div class="hero-body">
-            <div class="status-badge">
-                <div class="status-dot"></div>
-                <span>In ontwikkeling</span>
-            </div>
-
-            <h1 class="hero-headline">
-                Verdwaal<span class="pop">.</span>
-            </h1>
-
-            <p class="hero-sub">
-                Verdwaal op de heide. Waar de weidsheid van Drenthe samenvloeit met eigentijds design en ongegeneerd comfort. Heideway is je hideaway op de heidevelden.
-            </p>
-
-            <p class="hero-date">Verwacht &mdash; <strong>Voorjaar 2027</strong></p>
-
-            <div class="signup-form">
-                <input type="email" class="signup-input" placeholder="Uw e-mailadres">
-                <button class="signup-btn">Op de hoogte blijven</button>
-            </div>
-            <p class="signup-hint">Geen spam. Alleen updates over de opening. <em style="color:rgba(255,255,255,0.12)">Tip: soms zit het geheim in een naam.</em></p>
-            <p class="hint-text" style="margin-top: 24px;">Niet alles op deze pagina is wat het lijkt...</p>
-        </div>
-    </section>
-
-    <div class="accent-strip"></div>
-
-    <!-- CONTENT -->
-    <section class="content-section">
-        <div class="reveal">
-            <div class="section-label">
-                <div class="section-bar"></div>
-                <span>Wat komt eraan</span>
-                <div class="section-bar"></div>
-            </div>
-
-            <h2 class="content-title">
-                Natuur. <span class="pop">Design.</span> <span class="nature">Comfort.</span>
-            </h2>
-
-            <p class="content-desc">
-                Heideway ligt in de weidsheid van Zeijen, Drenthe — waar de heidevelden zich uitstrekken tot aan de horizon. Ingericht met oog voor detail, omringd door eindeloze natuur, en voorzien van alles wat een bijzonder verblijf vraagt.
-            </p>
-        </div>
-
-        <div class="features reveal">
-            <div class="feature-card" id="card-design">
-                <div class="feature-bar"></div>
-                <span class="card-hint-number">II</span>
-                <div class="feature-icon">&#9670;</div>
-                <h3>Design</h3>
-                <p>Eigentijds interieur met premium materialen en doordachte details in elk hoekje.</p>
-            </div>
-            <div class="feature-card" id="card-natuur">
-                <div class="feature-bar"></div>
-                <span class="card-hint-number">I</span>
-                <div class="feature-icon">&#10047;</div>
-                <h3>Natuur</h3>
-                <p>Direct aan de Drentse heide. Wandel- en fietsroutes beginnen bij de voordeur.</p>
-            </div>
-            <div class="feature-card" id="card-comfort">
-                <div class="feature-bar"></div>
-                <span class="card-hint-number">III</span>
-                <div class="feature-icon">&#9733;</div>
-                <h3>Comfort</h3>
-                <p>Hot tub, sauna en buitenkeuken. Alles voor een verblijf dat verder gaat dan slapen.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="accent-strip"></div>
-
-    <!-- DE OMGEVING -->
-    <section class="omgeving-section">
-        <div class="reveal">
-            <div class="section-label">
-                <div class="section-bar"></div>
-                <span>De omgeving</span>
-                <div class="section-bar"></div>
-            </div>
-
-            <h2 class="content-title">
-                Verdwaal in <span class="nature">Drenthe.</span>
-            </h2>
-
-            <p class="omgeving-intro">
-                Heideway ligt midden in het Drentsche Aa-landschap — een van de mooiste beekdalgebieden van Nederland. Eindeloze heidevelden, eeuwenoude bossen, brinkdorpen en stilte. Recht voor je deur.
-            </p>
-        </div>
-
-        <div class="omgeving-grid reveal">
-            <div class="omgeving-card">
-                <div class="omgeving-card-bar"></div>
-                <div class="omgeving-card-header">
-                    <div class="omgeving-icon">&#127795;</div>
-                    <h3>Wandelen &amp; Natuur</h3>
-                </div>
-                <p>Loop zo de heide op. De Veentjesroute start in Zeijen, het Balloërveld kleurt paars in augustus, en het Dwingelderveld is het grootste natte heideveld van Europa.</p>
-                <div class="omgeving-highlights">
-                    <span class="omgeving-tag">Veentjesroute</span>
-                    <span class="omgeving-tag">Drentsche Aa</span>
-                    <span class="omgeving-tag">Balloërveld</span>
-                    <span class="omgeving-tag">Dwingelderveld</span>
-                    <span class="omgeving-tag">Zeijerstrubben</span>
-                </div>
-            </div>
-
-            <div class="omgeving-card">
-                <div class="omgeving-card-bar"></div>
-                <div class="omgeving-card-header">
-                    <div class="omgeving-icon">&#128692;</div>
-                    <h3>Fietsen</h3>
-                </div>
-                <p>Drenthe is uitgeroepen tot 5-sterren fietsprovincie. Pak het knooppuntennetwerk en fiets langs beekdalen, hunebedden en brinkdorpen. Alles op fietsafstand.</p>
-                <div class="omgeving-highlights">
-                    <span class="omgeving-tag">Knooppuntennetwerk</span>
-                    <span class="omgeving-tag">Rondje Drentsche Aa</span>
-                    <span class="omgeving-tag">Hunebeddenroute</span>
-                    <span class="omgeving-tag">E-bike verhuur</span>
-                </div>
-            </div>
-
-            <div class="omgeving-card">
-                <div class="omgeving-card-bar"></div>
-                <div class="omgeving-card-header">
-                    <div class="omgeving-icon">&#127860;</div>
-                    <h3>Eten &amp; Drinken</h3>
-                </div>
-                <p>Van de Oranjerie in Zeijen tot sterrenrestaurant De Keuken van Arragon. Het Witte Huis in Zeegse voor lunch met uitzicht, of de gezellige markt van Assen voor een avondje uit.</p>
-                <div class="omgeving-highlights">
-                    <span class="omgeving-tag">Oranjerie Zeijen</span>
-                    <span class="omgeving-tag">Het Witte Huis</span>
-                    <span class="omgeving-tag">The Black Tie</span>
-                    <span class="omgeving-tag">Michelin &#10026;</span>
-                </div>
-            </div>
-
-            <div class="omgeving-card">
-                <div class="omgeving-card-bar"></div>
-                <div class="omgeving-card-header">
-                    <div class="omgeving-icon">&#127963;</div>
-                    <h3>Cultuur &amp; Beleving</h3>
-                </div>
-                <p>Bezoek het Drents Museum in Assen met het Meisje van Yde, ontdek 5.000 jaar oude hunebedden, of beleef het openluchtmuseum Orvelte. De TT Circuit is om de hoek.</p>
-                <div class="omgeving-highlights">
-                    <span class="omgeving-tag">Drents Museum</span>
-                    <span class="omgeving-tag">Hunebedden</span>
-                    <span class="omgeving-tag">Orvelte</span>
-                    <span class="omgeving-tag">TT Circuit</span>
-                </div>
-            </div>
-        </div>
-
-        <p class="omgeving-footer-text reveal">Supermarkt op <strong>3 km</strong> in Vries &middot; Assen op <strong>10 km</strong> &middot; Station Assen met directe trein naar Groningen en Zwolle</p>
-    </section>
-
-    <div class="accent-strip"></div>
-
-    <!-- Hints banner -->
-    <div class="hints-banner">
-        <p>Er zijn <span>5 verborgen kortingscodes</span> verstopt op deze pagina. Durf jij te zoeken?</p>
+<section class="hero">
+  <div class="hero-glow"></div>
+  <nav class="hero-nav">
+    <div>
+      <div class="logo" id="logo">Heideway<span class="dot" id="logoDot">.</span></div>
+      <span class="logo-sub">Drenthe</span>
     </div>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2026 Heideway &mdash; <a href="mailto:info@heideway.nl">info@heideway.nl</a></p>
-        <div class="footer-secret" id="footerSecret">&#10024; goed gevonden &mdash; klik hier &#10024;</div>
-    </footer>
-
-    <!-- Discovery Counter (appears after first find) -->
-    <div class="discovery-counter" id="discoveryCounter">
-        <span class="key-icon">&#128273;</span>
-        <span class="count" id="discoveryCount">0 / 5</span>
+  </nav>
+  <div class="hero-body">
+    <div class="status-badge"><div class="status-dot"></div><span>In ontwikkeling</span></div>
+    <h1 class="hero-headline">Heideway<span class="pop">.</span></h1>
+    <p class="hero-tagline">Jouw hideaway op de heidevelden</p>
+    <p class="hero-date">Verwacht &mdash; <strong>Voorjaar 2027</strong></p>
+    <div class="signup-form">
+      <input type="email" class="signup-input" placeholder="Uw e-mailadres">
+      <button class="signup-btn">Op de hoogte blijven</button>
     </div>
+    <p class="signup-hint">Geen spam. Alleen updates over de opening. <em style="color:rgba(255,255,255,0.12)">Tip: soms zit het geheim in een naam.</em></p>
+    <p class="hint-text" style="margin-top: 24px;">Niet alles op deze pagina is wat het lijkt...</p>
+  </div>
+</section>
 
-    <!-- Easter Egg Reveal Modal -->
-    <div class="egg-overlay" id="eggOverlay">
-        <div class="egg-modal">
-            <button class="egg-close" id="eggClose">&times;</button>
+<div class="accent-strip"></div>
 
-            <div id="eggContent">
-                <div class="egg-sparkle">&#10024;</div>
-                <div class="egg-title" id="eggTitle">Geheim ontdekt!</div>
-                <div class="egg-subtitle" id="eggSubtitle">Je hebt een verborgen kortingscode gevonden.</div>
-                <div class="egg-discount">50%</div>
-                <div class="egg-discount-label">korting op je eerste verblijf</div>
-                <div class="egg-form">
-                    <input type="email" class="egg-email-input" id="eggEmail" placeholder="Je e-mailadres om te claimen">
-                    <button class="egg-claim-btn" id="eggClaimBtn">Claim mijn korting</button>
-                </div>
-                <div class="egg-limit">Maximaal 5 codes beschikbaar &mdash; op is op</div>
-            </div>
-
-            <div class="egg-success" id="eggSuccess">
-                <div class="egg-success-icon">&#127808;</div>
-                <div class="egg-success-text">Geregistreerd!</div>
-                <div class="egg-success-sub">Als je bij de eerste 5 ontdekkers hoort, ontvang je jouw persoonlijke kortingscode per e-mail. Houd je inbox in de gaten!</div>
-            </div>
-        </div>
+<section class="content-section">
+  <div class="reveal">
+    <div class="section-label"><div class="section-bar"></div><span>Wat komt eraan</span><div class="section-bar"></div></div>
+    <h2 class="content-title">Natuur. <span class="pop">Design.</span> <span class="nature">Comfort.</span></h2>
+    <p class="content-desc">Heideway ligt in de weidsheid van Zeijen, Drenthe — waar de heidevelden zich uitstrekken tot aan de horizon. Ingericht met oog voor detail, omringd door eindeloze natuur, en voorzien van alles wat een bijzonder verblijf vraagt.</p>
+  </div>
+  <div class="features reveal">
+    <div class="feature-card" id="card-design">
+      <div class="feature-bar"></div><span class="card-hint-number">II</span>
+      <div class="feature-icon">&#9670;</div>
+      <h3>Design</h3><p>Eigentijds interieur met premium materialen en doordachte details in elk hoekje.</p>
     </div>
+    <div class="feature-card" id="card-natuur">
+      <div class="feature-bar"></div><span class="card-hint-number">I</span>
+      <div class="feature-icon">&#10047;</div>
+      <h3>Natuur</h3><p>Direct aan de Drentse heide. Wandel- en fietsroutes beginnen bij de voordeur.</p>
+    </div>
+    <div class="feature-card" id="card-comfort">
+      <div class="feature-bar"></div><span class="card-hint-number">III</span>
+      <div class="feature-icon">&#9733;</div>
+      <h3>Comfort</h3><p>Hot tub, sauna en buitenkeuken. Alles voor een verblijf dat verder gaat dan slapen.</p>
+    </div>
+  </div>
+</section>
 
-    <script>
-    (function() {
-        'use strict';
+<div class="accent-strip"></div>
 
-        // ============================================
-        // HEIDEWAY EASTER EGG SYSTEM v2
-        // 5 verborgen codes, max 5 ontdekkers
-        // Hints zichtbaar op de pagina
-        // ============================================
+<section class="omgeving-section">
+  <div class="reveal">
+    <div class="section-label"><div class="section-bar"></div><span>De omgeving</span><div class="section-bar"></div></div>
+    <h2 class="content-title">Verdwaal in <span class="nature">Drenthe.</span></h2>
+    <p class="omgeving-intro">Heideway ligt midden in het Drentsche Aa-landschap — een van de mooiste beekdalgebieden van Nederland. Eindeloze heidevelden, eeuwenoude bossen, brinkdorpen en stilte. Recht voor je deur.</p>
+  </div>
+  <div class="omgeving-grid reveal">
+    <div class="omgeving-card">
+      <div class="omgeving-card-bar"></div>
+      <div class="omgeving-card-header"><div class="omgeving-icon">&#127795;</div><h3>Wandelen &amp; Natuur</h3></div>
+      <p>Loop zo de heide op. De Veentjesroute start in Zeijen, het Balloërveld kleurt paars in augustus, en het Dwingelderveld is het grootste natte heideveld van Europa.</p>
+      <div class="omgeving-highlights"><span class="omgeving-tag">Veentjesroute</span><span class="omgeving-tag">Drentsche Aa</span><span class="omgeving-tag">Balloërveld</span><span class="omgeving-tag">Dwingelderveld</span><span class="omgeving-tag">Zeijerstrubben</span></div>
+    </div>
+    <div class="omgeving-card">
+      <div class="omgeving-card-bar"></div>
+      <div class="omgeving-card-header"><div class="omgeving-icon">&#128692;</div><h3>Fietsen</h3></div>
+      <p>Drenthe is uitgeroepen tot 5-sterren fietsprovincie. Pak het knooppuntennetwerk en fiets langs beekdalen, hunebedden en brinkdorpen. Alles op fietsafstand.</p>
+      <div class="omgeving-highlights"><span class="omgeving-tag">Knooppuntennetwerk</span><span class="omgeving-tag">Rondje Drentsche Aa</span><span class="omgeving-tag">Hunebeddenroute</span><span class="omgeving-tag">E-bike verhuur</span></div>
+    </div>
+    <div class="omgeving-card">
+      <div class="omgeving-card-bar"></div>
+      <div class="omgeving-card-header"><div class="omgeving-icon">&#127860;</div><h3>Eten &amp; Drinken</h3></div>
+      <p>Van de Oranjerie in Zeijen tot sterrenrestaurant De Keuken van Arragon. Het Witte Huis in Zeegse voor lunch met uitzicht, of de gezellige markt van Assen voor een avondje uit.</p>
+      <div class="omgeving-highlights"><span class="omgeving-tag">Oranjerie Zeijen</span><span class="omgeving-tag">Het Witte Huis</span><span class="omgeving-tag">The Black Tie</span><span class="omgeving-tag">Michelin &#10026;</span></div>
+    </div>
+    <div class="omgeving-card">
+      <div class="omgeving-card-bar"></div>
+      <div class="omgeving-card-header"><div class="omgeving-icon">&#127963;</div><h3>Cultuur &amp; Beleving</h3></div>
+      <p>Bezoek het Drents Museum in Assen met het Meisje van Yde, ontdek 5.000 jaar oude hunebedden, of beleef het openluchtmuseum Orvelte. De TT Circuit is om de hoek.</p>
+      <div class="omgeving-highlights"><span class="omgeving-tag">Drents Museum</span><span class="omgeving-tag">Hunebedden</span><span class="omgeving-tag">Orvelte</span><span class="omgeving-tag">TT Circuit</span></div>
+    </div>
+  </div>
+  <p class="omgeving-footer-text reveal">Supermarkt op <strong>3 km</strong> in Vries &middot; Assen op <strong>10 km</strong> &middot; Station Assen met directe trein naar Groningen en Zwolle</p>
+</section>
 
-        const EGGS = {
-            dot:      { found: false, name: 'De Punt',       hint: 'De gouden punt in het logo knippert niet zomaar...' },
-            date:     { found: false, name: 'De Datum',      hint: 'Dubbelklik op "Voorjaar 2027"' },
-            cards:    { found: false, name: 'De Volgorde',   hint: 'De Romeinse cijfers op de kaarten wijzen de weg' },
-            footer:   { found: false, name: 'De Ontdekker',  hint: 'Onderaan de pagina wacht een beloning' },
-            signup:   { found: false, name: 'De Insider',    hint: 'Schrijf je in met het woord "heide" in je naam' }
-        };
+<div class="accent-strip"></div>
 
-        let foundCount = 0;
-        let currentEgg = null;
+<!-- PREMIUM EVENEMENTEN -->
+<section class="events-section">
+  <div class="reveal">
+    <div class="section-label"><div class="section-bar"></div><span>Premium Evenementen</span><div class="section-bar"></div></div>
+    <h2 class="content-title">Beleef het van <span class="pop">dichtbij.</span></h2>
+    <p class="content-desc">Drenthe is het decor van wereldklasse motorsportevenementen. Verblijf bij Heideway en beleef de actie op slechts minuten van het circuit.</p>
+  </div>
+  <div class="events-grid reveal">
+    <a href="tt-assen-2027.html" class="event-card gold">
+      <span class="event-badge">Nu boeken</span>
+      <h3>TT Assen 2027</h3>
+      <div class="event-date">Juni 2027 — MotoGP Dutch TT</div>
+      <div class="event-desc">De TT van Assen — 's werelds oudste en meest prestigieuze motorcoursevenement. Op slechts 20 minuten van uw luxe thuisbasis bij Heideway.</div>
+      <div class="event-cta">Bekijk &amp; boek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a href="motocross-nations-2027.html" class="event-card copper">
+      <span class="event-badge">Nu boeken</span>
+      <h3>Motocross of Nations 2027</h3>
+      <div class="event-date">Najaar 2027 — MXoN Drenthe</div>
+      <div class="event-desc">Het grootste motocrosslandenteamevenement ter wereld komt naar Drenthe. 35+ landen, 100.000+ toeschouwers, en uw privé uitvalsbasis op ~20 minuten.</div>
+      <div class="event-cta">Bekijk &amp; boek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+  </div>
+</section>
 
-        // --- DISCOVERY COUNTER ---
-        const counter = document.getElementById('discoveryCounter');
-        const countDisplay = document.getElementById('discoveryCount');
+<div class="accent-strip"></div>
 
-        function updateCounter() {
-            countDisplay.textContent = foundCount + ' / 5';
-            if (foundCount > 0) {
-                counter.classList.add('visible');
-            }
-        }
+<div class="hints-banner">
+  <p>Er zijn <span>5 verborgen kortingscodes</span> verstopt op deze pagina. Durf jij te zoeken?</p>
+</div>
 
-        // --- MODAL ---
-        const overlay = document.getElementById('eggOverlay');
-        const eggContent = document.getElementById('eggContent');
-        const eggSuccess = document.getElementById('eggSuccess');
-        const eggTitle = document.getElementById('eggTitle');
-        const eggSubtitle = document.getElementById('eggSubtitle');
-        const eggEmail = document.getElementById('eggEmail');
-        const eggClaimBtn = document.getElementById('eggClaimBtn');
-        const eggClose = document.getElementById('eggClose');
+<footer class="footer">
+  <p>&copy; 2026 Heideway &mdash; <a href="mailto:info@heideway.nl">info@heideway.nl</a></p>
+  <div class="footer-secret" id="footerSecret">&#10024; goed gevonden &mdash; klik hier &#10024;</div>
+</footer>
 
-        function showEggModal(eggKey) {
-            if (EGGS[eggKey].found) return;
-            EGGS[eggKey].found = true;
-            foundCount++;
-            currentEgg = eggKey;
-            updateCounter();
+<div class="discovery-counter" id="discoveryCounter"><span class="key-icon">&#128273;</span><span class="count" id="discoveryCount">0 / 5</span></div>
 
-            eggTitle.textContent = EGGS[eggKey].name + ' ontdekt!';
-            eggSubtitle.textContent = 'Geheim ' + foundCount + ' van 5 gevonden. Claim je 50% korting.';
-            eggContent.style.display = 'block';
-            eggSuccess.classList.remove('show');
-            eggEmail.value = '';
+<div class="egg-overlay" id="eggOverlay">
+  <div class="egg-modal">
+    <button class="egg-close" id="eggClose">&times;</button>
+    <div id="eggContent">
+      <div class="egg-sparkle">&#10024;</div>
+      <div class="egg-title" id="eggTitle">Geheim ontdekt!</div>
+      <div class="egg-subtitle" id="eggSubtitle">Je hebt een verborgen kortingscode gevonden.</div>
+      <div class="egg-discount">50%</div>
+      <div class="egg-discount-label">korting op je eerste verblijf</div>
+      <div class="egg-form">
+        <input type="email" class="egg-email-input" id="eggEmail" placeholder="Je e-mailadres om te claimen">
+        <button class="egg-claim-btn" id="eggClaimBtn">Claim mijn korting</button>
+      </div>
+      <div class="egg-limit">Maximaal 5 codes beschikbaar &mdash; op is op</div>
+    </div>
+    <div class="egg-success" id="eggSuccess">
+      <div class="egg-success-icon">&#127808;</div>
+      <div class="egg-success-text">Geregistreerd!</div>
+      <div class="egg-success-sub">Als je bij de eerste 5 ontdekkers hoort, ontvang je jouw persoonlijke kortingscode per e-mail. Houd je inbox in de gaten!</div>
+    </div>
+  </div>
+</div>
 
-            overlay.classList.add('active');
-        }
-
-        function closeModal() {
-            overlay.classList.remove('active');
-            currentEgg = null;
-        }
-
-        eggClose.addEventListener('click', closeModal);
-        overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) closeModal();
-        });
-
-        eggClaimBtn.addEventListener('click', function() {
-            var email = eggEmail.value.trim();
-            if (!email || !email.includes('@') || !email.includes('.')) {
-                eggEmail.style.borderColor = '#e74c3c';
-                eggEmail.setAttribute('placeholder', 'Vul een geldig e-mailadres in');
-                return;
-            }
-
-            var data = {
-                email: email,
-                egg: currentEgg,
-                eggName: EGGS[currentEgg].name,
-                foundAt: new Date().toISOString(),
-                totalFound: foundCount
-            };
-
-            console.log('Heideway Easter Egg claim:', JSON.stringify(data));
-
-            var WEBHOOK_URL = '';
-            if (WEBHOOK_URL) {
-                fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                }).catch(function() {});
-            }
-
-            eggContent.style.display = 'none';
-            eggSuccess.classList.add('show');
-            setTimeout(closeModal, 4000);
-        });
-
-        // ============================================
-        // EGG 1: Klik op de gouden punt in het logo
-        // Hint: de punt pulseert goud (CSS animatie)
-        // ============================================
-        (function() {
-            var dot = document.getElementById('logoDot');
-            dot.addEventListener('click', function(e) {
-                e.stopPropagation();
-                dot.classList.add('egg-discovered');
-                showEggModal('dot');
-            });
-        })();
-
-        // ============================================
-        // EGG 2: Dubbelklik op "Voorjaar 2027"
-        // Hint: tekst gloeit goud bij hover (CSS)
-        // ============================================
-        (function() {
-            var dateEl = document.querySelector('.hero-date strong');
-            dateEl.addEventListener('dblclick', function() {
-                this.classList.add('egg-discovered');
-                showEggModal('date');
-            });
-        })();
-
-        // ============================================
-        // EGG 3: Klik kaarten in Romeinse volgorde I, II, III
-        // Hint: Romeinse cijfers zichtbaar op hover
-        // Natuur=I, Design=II, Comfort=III
-        // ============================================
-        (function() {
-            var cardOrder = ['card-natuur', 'card-design', 'card-comfort'];
-            var cardIndex = 0;
-
-            cardOrder.forEach(function(id) {
-                document.getElementById(id).addEventListener('click', function() {
-                    if (EGGS.cards.found) return;
-
-                    if (id === cardOrder[cardIndex]) {
-                        cardIndex++;
-                        this.classList.add('egg-discovered');
-
-                        if (cardIndex === cardOrder.length) {
-                            cardIndex = 0;
-                            showEggModal('cards');
-                        }
-                    } else {
-                        cardIndex = 0;
-                        cardOrder.forEach(function(cid) {
-                            document.getElementById(cid).classList.remove('egg-discovered');
-                        });
-                    }
-                });
-            });
-        })();
-
-        // ============================================
-        // EGG 4: Klik op de footer hint-tekst
-        // Hint: tekst is zichtbaar in footer
-        // ============================================
-        (function() {
-            var secret = document.getElementById('footerSecret');
-            secret.addEventListener('click', function() {
-                this.classList.add('egg-discovered');
-                showEggModal('footer');
-            });
-        })();
-
-        // ============================================
-        // EGG 5: Gebruik "heide" in het naam-veld van signup
-        // Hint: de signup-hint tekst verwijst ernaar
-        // ============================================
-        (function() {
-            var signupBtn = document.querySelector('.signup-btn');
-            var signupInput = document.querySelector('.signup-input');
-
-            signupBtn.addEventListener('click', function(e) {
-                var val = signupInput.value.trim().toLowerCase();
-                if (val.includes('heide') && !EGGS.signup.found) {
-                    e.preventDefault();
-                    showEggModal('signup');
-                }
-            });
-        })();
-
-        // Scroll reveal
-        var revealObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.reveal').forEach(function(el) {
-            revealObserver.observe(el);
-        });
-
-    })();
-    </script>
+<script>
+(function() {
+  'use strict';
+  var EGGS = { dot: { found: false, name: 'De Punt', hint: 'De gouden punt in het logo knippert niet zomaar...' }, date: { found: false, name: 'De Datum', hint: 'Dubbelklik op Voorjaar 2027' }, cards: { found: false, name: 'De Volgorde', hint: 'De Romeinse cijfers op de kaarten wijzen de weg' }, footer: { found: false, name: 'De Ontdekker', hint: 'Onderaan de pagina wacht een beloning' }, signup: { found: false, name: 'De Insider', hint: 'Schrijf je in met het woord heide in je naam' } };
+  var foundCount = 0, currentEgg = null;
+  var counter = document.getElementById('discoveryCounter');
+  var countDisplay = document.getElementById('discoveryCount');
+  function updateCounter() { countDisplay.textContent = foundCount + ' / 5'; if (foundCount > 0) counter.classList.add('visible'); }
+  var overlay = document.getElementById('eggOverlay'), eggContent = document.getElementById('eggContent'), eggSuccess = document.getElementById('eggSuccess');
+  var eggTitle = document.getElementById('eggTitle'), eggSubtitle = document.getElementById('eggSubtitle');
+  var eggEmail = document.getElementById('eggEmail'), eggClaimBtn = document.getElementById('eggClaimBtn'), eggClose = document.getElementById('eggClose');
+  function showEggModal(k) { if (EGGS[k].found) return; EGGS[k].found = true; foundCount++; currentEgg = k; updateCounter(); eggTitle.textContent = EGGS[k].name + ' ontdekt!'; eggSubtitle.textContent = 'Geheim ' + foundCount + ' van 5 gevonden. Claim je 50% korting.'; eggContent.style.display = 'block'; eggSuccess.classList.remove('show'); eggEmail.value = ''; overlay.classList.add('active'); }
+  function closeModal() { overlay.classList.remove('active'); currentEgg = null; }
+  eggClose.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+  eggClaimBtn.addEventListener('click', function() { var email = eggEmail.value.trim(); if (!email || !email.includes('@') || !email.includes('.')) { eggEmail.style.borderColor = '#e74c3c'; eggEmail.setAttribute('placeholder', 'Vul een geldig e-mailadres in'); return; } console.log('Heideway Easter Egg claim:', JSON.stringify({ email: email, egg: currentEgg, eggName: EGGS[currentEgg].name, foundAt: new Date().toISOString(), totalFound: foundCount })); eggContent.style.display = 'none'; eggSuccess.classList.add('show'); setTimeout(closeModal, 4000); });
+  document.getElementById('logoDot').addEventListener('click', function(e) { e.stopPropagation(); this.classList.add('egg-discovered'); showEggModal('dot'); });
+  document.querySelector('.hero-date strong').addEventListener('dblclick', function() { this.classList.add('egg-discovered'); showEggModal('date'); });
+  (function() { var order = ['card-natuur', 'card-design', 'card-comfort'], idx = 0; order.forEach(function(id) { document.getElementById(id).addEventListener('click', function() { if (EGGS.cards.found) return; if (id === order[idx]) { idx++; this.classList.add('egg-discovered'); if (idx === order.length) { idx = 0; showEggModal('cards'); } } else { idx = 0; order.forEach(function(c) { document.getElementById(c).classList.remove('egg-discovered'); }); } }); }); })();
+  document.getElementById('footerSecret').addEventListener('click', function() { this.classList.add('egg-discovered'); showEggModal('footer'); });
+  (function() { var btn = document.querySelector('.signup-btn'), inp = document.querySelector('.signup-input'); btn.addEventListener('click', function(e) { var v = inp.value.trim().toLowerCase(); if (v.includes('heide') && !EGGS.signup.found) { e.preventDefault(); showEggModal('signup'); } }); })();
+  var obs = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+})();
+</script>
 </body>
 </html>
